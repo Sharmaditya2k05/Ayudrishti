@@ -1,0 +1,290 @@
+{
+  "id": "virabhadrasana_ii",
+  "name": "Virabhadrasana II",
+  "english_name": "Warrior II",
+  "difficulty": "intermediate",
+  "symmetry": "unilateral",
+  "hold_seconds": 30,
+  "description": "A wide-stance standing pose. The front knee bends toward a right angle and tracks over the ankle, the back leg stays straight, the torso stays upright between the legs, and the arms extend level with the shoulders.",
+  "preferred_view": "front",
+  "camera_hint": "Place your camera facing you, about 2-3 metres away, so your whole body is in frame.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Virabhadrasana%20II%20-%20Warrior%20II%20Pose.jpg?width=600",
+  "image_credit": "Photo: lululemon athletica / Wikimedia Commons, CC BY 2.0",
+  "target_goals": [
+    "strength",
+    "flexibility",
+    "general_fitness",
+    "mobility"
+  ],
+  "focus_areas": [
+    "legs",
+    "hips",
+    "shoulders",
+    "core"
+  ],
+  "corrects": [
+    "knee_alignment",
+    "hip_alignment",
+    "shoulder_alignment"
+  ],
+  "preparatory": [
+    "tadasana",
+    "utkatasana"
+  ],
+  "benefits": [
+    "Strengthens the thighs, calves and ankles",
+    "Opens the hips and chest",
+    "Builds stamina and concentration"
+  ],
+  "contraindications": [
+    "Knee injury",
+    "Recent hip surgery",
+    "High blood pressure with raised arms"
+  ],
+  "cues": [
+    "Step your feet wide apart, front foot pointing forward",
+    "Bend your front knee toward a right angle, keeping it over the ankle",
+    "Keep your back leg straight and strong",
+    "Reach your arms out to shoulder height, parallel to the floor",
+    "Keep your torso upright, not leaning over the front leg"
+  ],
+  "components": {
+    "legs": "Legs",
+    "knee": "Front knee alignment",
+    "torso": "Torso",
+    "hips": "Hip alignment",
+    "arms": "Arms",
+    "shoulders": "Shoulders"
+  },
+  "rules": [
+    {
+      "id": "front_knee_flexion",
+      "component": "knee",
+      "body_part": "front knee",
+      "measurement": "angle",
+      "landmarks": [
+        "lead_hip",
+        "lead_knee",
+        "lead_ankle"
+      ],
+      "target": [
+        85,
+        115
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Your front knee is bending too deeply. Lift up slightly so the shin stays vertical.",
+        "high": "Bend your front knee more, working toward a right angle at the knee."
+      },
+      "discriminative": true
+    },
+    {
+      "id": "front_knee_over_ankle",
+      "component": "knee",
+      "body_part": "front knee",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "lead_knee",
+        "lead_ankle"
+      ],
+      "target": [
+        0.0,
+        0.3
+      ],
+      "tolerance": 0.45,
+      "weight": 2.5,
+      "feedback": {
+        "low": "",
+        "high": "Your front knee has drifted away from your ankle. Move it back so it stacks directly over the ankle."
+      }
+    },
+    {
+      "id": "back_leg_straight",
+      "component": "legs",
+      "body_part": "back knee",
+      "measurement": "angle",
+      "landmarks": [
+        "rear_hip",
+        "rear_knee",
+        "rear_ankle"
+      ],
+      "target": [
+        162,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 2.0,
+      "feedback": {
+        "low": "Straighten your back leg and press through the outer edge of the back foot.",
+        "high": ""
+      }
+    },
+    {
+      "id": "stance_width",
+      "component": "legs",
+      "body_part": "stance",
+      "measurement": "distance_ratio",
+      "landmarks": [
+        "left_ankle",
+        "right_ankle",
+        "lead_shoulder",
+        "lead_hip"
+      ],
+      "target": [
+        2.0,
+        4.2
+      ],
+      "tolerance": 1.2,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Widen your stance. Step your back foot further away.",
+        "high": "Your stance is too wide to stay stable. Step your feet slightly closer."
+      }
+    },
+    {
+      "id": "torso_upright",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "lead_shoulder",
+        "lead_hip"
+      ],
+      "target": [
+        0,
+        18
+      ],
+      "tolerance": 28,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Keep your torso more upright. Draw your chest back so you are not leaning over the front leg."
+      }
+    },
+    {
+      "id": "hips_level",
+      "component": "hips",
+      "body_part": "hips",
+      "measurement": "segment_horizontal",
+      "landmarks": [
+        "left_hip",
+        "right_hip"
+      ],
+      "target": [
+        0,
+        12
+      ],
+      "tolerance": 20,
+      "weight": 1.5,
+      "feedback": {
+        "low": "",
+        "high": "Level your hips. Draw the higher hip down and lengthen both sides of your waist evenly."
+      }
+    },
+    {
+      "id": "arms_horizontal",
+      "component": "arms",
+      "body_part": "arms",
+      "measurement": "segment_horizontal",
+      "landmarks": [
+        "left_wrist",
+        "right_wrist"
+      ],
+      "target": [
+        0,
+        12
+      ],
+      "tolerance": 22,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Bring both arms to the same height, level with your shoulders."
+      }
+    },
+    {
+      "id": "front_arm_straight",
+      "component": "arms",
+      "body_part": "front elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "lead_shoulder",
+        "lead_elbow",
+        "lead_wrist"
+      ],
+      "target": [
+        160,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.2,
+      "feedback": {
+        "low": "Extend your front arm fully, reaching actively through the fingertips.",
+        "high": ""
+      }
+    },
+    {
+      "id": "back_arm_straight",
+      "component": "arms",
+      "body_part": "back elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "rear_shoulder",
+        "rear_elbow",
+        "rear_wrist"
+      ],
+      "target": [
+        160,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.2,
+      "feedback": {
+        "low": "Extend your back arm fully, reaching actively through the fingertips.",
+        "high": ""
+      }
+    },
+    {
+      "id": "arms_at_shoulder_height",
+      "component": "arms",
+      "body_part": "front arm",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "lead_wrist",
+        "lead_shoulder"
+      ],
+      "target": [
+        -0.22,
+        0.22
+      ],
+      "tolerance": 0.35,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Raise your front arm to shoulder height.",
+        "high": "Lower your front arm to shoulder height."
+      }
+    },
+    {
+      "id": "shoulders_level",
+      "component": "shoulders",
+      "body_part": "shoulders",
+      "measurement": "segment_horizontal",
+      "landmarks": [
+        "left_shoulder",
+        "right_shoulder"
+      ],
+      "target": [
+        0,
+        12
+      ],
+      "tolerance": 20,
+      "weight": 1.2,
+      "feedback": {
+        "low": "",
+        "high": "Level your shoulders and relax them away from your ears."
+      }
+    }
+  ],
+  "sequence_stage": "standing",
+  "intensity": 4
+}

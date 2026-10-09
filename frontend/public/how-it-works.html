@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AyuDrishti Explained</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Mulish:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --bg: #F1F5F1;
+    --surface: #FFFFFF;
+    --surface-2: #F6FAF6;
+    --ink: #1B2A24;
+    --muted: #566B60;
+    --primary: #256B4E;
+    --primary-soft: #E3F0E8;
+    --accent: #B96F26;
+    --accent-soft: #F6E7D3;
+    --line: #D6E1D9;
+    --shadow: 0 1px 2px rgba(27,42,36,.05), 0 8px 24px rgba(27,42,36,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1512;
+      --surface: #17201B;
+      --surface-2: #1C271F;
+      --ink: #E7EEE9;
+      --muted: #9AAEA3;
+      --primary: #5CC894;
+      --primary-soft: #1D2C24;
+      --accent: #E0A253;
+      --accent-soft: #2A2216;
+      --line: #26312B;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1512;
+    --surface: #17201B;
+    --surface-2: #1C271F;
+    --ink: #E7EEE9;
+    --muted: #9AAEA3;
+    --primary: #5CC894;
+    --primary-soft: #1D2C24;
+    --accent: #E0A253;
+    --accent-soft: #2A2216;
+    --line: #26312B;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  section[id] { scroll-margin-top: 20px; }
+  a:focus-visible, .theme-toggle:focus-visible {
+    outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 5px;
+  }
+
+  .theme-toggle {
+    position: fixed; top: 14px; right: 14px; z-index: 50;
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .03em;
+    color: var(--muted); background: var(--surface); border: 1px solid var(--line);
+    border-radius: 100px; padding: 7px 13px; cursor: pointer; box-shadow: var(--shadow);
+  }
+  .theme-toggle:hover { color: var(--primary); border-color: var(--primary); }
+  .theme-toggle svg { display: block; }
+  @media print { .theme-toggle { display: none; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Mulish", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  .prose { max-width: 680px; margin-left: auto; margin-right: auto; }
+
+  /* ---- Typography ---- */
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; text-wrap: balance; line-height: 1.15; color: var(--ink); }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 600; margin: 0 0 .3em; letter-spacing: -.01em; }
+  h3 { font-size: 1.28rem; font-weight: 600; margin: 2em 0 .4em; }
+  p { margin: 0 0 1.1em; }
+  a { color: var(--primary); text-underline-offset: 3px; }
+  strong { font-weight: 700; color: var(--ink); }
+  code { font-family: "IBM Plex Mono", monospace; font-size: .86em; background: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; color: var(--ink); }
+  .lead { font-size: 1.16rem; color: var(--muted); }
+  .kicker {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500;
+  }
+
+  /* ---- Hero ---- */
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(120% 90% at 85% -10%, var(--primary-soft) 0%, transparent 55%),
+      var(--bg);
+  }
+  .hero-inner { padding: 68px 0 48px; }
+  .mark {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05rem; color: var(--primary);
+    margin-bottom: 26px;
+  }
+  .mark .lotus { width: 26px; height: 26px; color: var(--primary); }
+  h1 { font-size: clamp(2.5rem, 7vw, 4rem); font-weight: 600; letter-spacing: -.02em; margin: 0 0 .25em; }
+  h1 .tint { color: var(--primary); font-style: italic; font-weight: 500; }
+  .sub { font-size: 1.2rem; color: var(--muted); max-width: 560px; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px;
+  }
+  .pill {
+    font-family: "IBM Plex Mono", monospace; font-size: .74rem; letter-spacing: .02em;
+    padding: 5px 11px; border-radius: 100px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--muted);
+  }
+
+  /* ---- Table of contents ---- */
+  nav.toc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 22px 26px; margin: 40px auto; box-shadow: var(--shadow); max-width: 680px;
+  }
+  nav.toc .kicker { display: block; margin-bottom: 12px; }
+  nav.toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4px 26px; }
+  nav.toc li { counter-increment: toc; }
+  nav.toc a {
+    display: flex; gap: 10px; padding: 6px 0; text-decoration: none; color: var(--ink);
+    font-size: .96rem; align-items: baseline;
+  }
+  nav.toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--accent);
+    flex: none;
+  }
+  nav.toc a:hover { color: var(--primary); }
+
+  /* ---- Section rhythm ---- */
+  section { padding: 30px 0; }
+  section > .wrap > .kicker { display: block; text-align: center; margin-bottom: 10px; }
+  .section-head { text-align: center; margin-bottom: 26px; }
+  .section-head h2 { margin-bottom: 0; }
+
+  /* ---- Term card ("in plain words") ---- */
+  .term {
+    background: var(--surface); border: 1px solid var(--line);
+    border-left: 4px solid var(--accent); border-radius: 12px;
+    padding: 16px 20px; margin: 22px auto; max-width: 680px; box-shadow: var(--shadow);
+  }
+  .term .t-kick { font-family: "IBM Plex Mono", monospace; font-size: .68rem; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--accent); }
+  .term .t-word { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.12rem; margin: 2px 0 4px; }
+  .term p { margin: 0; font-size: .99rem; }
+  .term .analogy { color: var(--muted); font-style: italic; margin-top: 6px; display: block; }
+
+  /* ---- Callout ---- */
+  .callout {
+    background: var(--primary-soft); border-radius: 14px; padding: 18px 22px;
+    margin: 24px auto; max-width: 680px; border: 1px solid transparent;
+  }
+  .callout .c-kick { font-family: "IBM Plex Mono", monospace; font-size: .68rem; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--primary); font-weight: 500; }
+  .callout p { margin: 4px 0 0; }
+  .callout.warn { background: var(--accent-soft); }
+  .callout.warn .c-kick { color: var(--accent); }
+
+  /* ---- Figure / diagram frame ---- */
+  figure.fig {
+    margin: 30px 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 18px; padding: 26px 24px 16px; box-shadow: var(--shadow); overflow-x: auto;
+  }
+  figure.fig svg { display: block; width: 100%; height: auto; max-width: 720px; margin: 0 auto; color: var(--ink); }
+  figcaption { font-size: .9rem; color: var(--muted); text-align: center; margin-top: 14px;
+    max-width: 620px; margin-left: auto; margin-right: auto; }
+  figcaption b { color: var(--ink); }
+
+  /* diagram tokens (SVG inherits color; groups override for accent/primary/muted) */
+  .dgm .muted { color: var(--muted); }
+  .dgm .accent { color: var(--accent); }
+  .dgm .primary { color: var(--primary); }
+  .dgm .box { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.5; }
+  .dgm .box-accent { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+  .dgm .box-primary { fill: var(--primary-soft); stroke: var(--primary); stroke-width: 1.5; }
+  .dgm text { fill: var(--ink); font-family: "Mulish", sans-serif; }
+  .dgm .lbl { fill: var(--muted); font-family: "IBM Plex Mono", monospace; }
+  .dgm .edge { stroke: var(--muted); fill: none; stroke-width: 1.6; }
+  .dgm .edge-accent { stroke: var(--accent); fill: none; stroke-width: 2; }
+  .dgm .edge-primary { stroke: var(--primary); fill: none; stroke-width: 2; }
+  .dgm .fillmuted { fill: var(--muted); }
+  .dgm .fillaccent { fill: var(--accent); }
+  .dgm .fillprimary { fill: var(--primary); }
+
+  /* ---- Simple two-column compare ---- */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+  .compare .col { border-radius: 14px; padding: 16px 18px; border: 1px solid var(--line); background: var(--surface); }
+  .compare .col.no { }
+  .compare .col.yes { border-color: var(--primary); background: var(--primary-soft); }
+  .compare .col h4 { margin: 0 0 6px; font-family: "IBM Plex Mono", monospace; font-size: .72rem;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .compare .col.yes h4 { color: var(--primary); }
+  .compare .col p { margin: 0; font-size: .97rem; }
+
+  /* ---- Tech stack table ---- */
+  .stack-wrap { overflow-x: auto; margin: 28px 0 10px; border: 1px solid var(--line);
+    border-radius: 14px; box-shadow: var(--shadow); -webkit-overflow-scrolling: touch; }
+  table.stack { border-collapse: collapse; width: 100%; min-width: 660px; background: var(--surface); font-size: .9rem; }
+  table.stack th, table.stack td { text-align: left; padding: 11px 15px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; }
+  table.stack thead th { font-family: "IBM Plex Mono", monospace; font-size: .66rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+  table.stack tbody tr:last-child td { border-bottom: 0; }
+  table.stack td.layer { font-family: "IBM Plex Mono", monospace; font-size: .72rem; color: var(--accent); white-space: nowrap; }
+  table.stack td.tool { font-weight: 700; color: var(--ink); white-space: nowrap; }
+  table.stack td.cust { color: var(--muted); }
+  .stack-note { font-size: .82rem; color: var(--muted); text-align: center; margin: 0 0 6px; }
+
+  /* ---- Glossary ---- */
+  .glossary { max-width: 680px; margin: 0 auto; }
+  .glossary dl { margin: 0; }
+  .glossary dt { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.05rem; color: var(--ink);
+    margin-top: 18px; }
+  .glossary dt::before { content: "›"; color: var(--accent); margin-right: 8px; }
+  .glossary dd { margin: 3px 0 0; color: var(--muted); font-size: .98rem; }
+  .glossary dd b { color: var(--ink); }
+
+  /* ---- Footer ---- */
+  footer { border-top: 1px solid var(--line); margin-top: 30px; padding: 34px 0 60px; text-align: center; }
+  footer p { color: var(--muted); font-size: .9rem; margin: 4px 0; }
+  footer .mono { font-family: "IBM Plex Mono", monospace; font-size: .78rem; }
+
+  .divider { height: 1px; background: var(--line); border: 0; max-width: 680px; margin: 8px auto; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    nav.toc ol { grid-template-columns: 1fr; }
+    .compare { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    :root { --bg:#fff; --surface:#fff; --surface-2:#f4f7f4; --ink:#1B2A24; --muted:#4a5a52; --line:#c9d5cd; --shadow:none; }
+    body { font-size: 11.5pt; }
+    header.hero { background: #fff; }
+    figure.fig, .term, .callout, nav.toc { break-inside: avoid; box-shadow: none; }
+    section { padding: 12px 0; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+
+<button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle light or dark theme">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+  <span class="tt-label">Dark</span>
+</button>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="mark">
+      <svg class="lotus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M12 21c5 0 9-3 9-6-2 0-3 .6-4 1.4C17.6 13 15 11 12 11S6.4 13 5 16.4C4 15.6 3 15 1 15c0 3 4 6 9 6Z"/>
+        <path d="M12 11c1.8-2 2.4-5 1.6-8C11 5 9.6 7.4 9.6 10M12 11c-1.8-2-2.4-5-1.6-8"/>
+      </svg>
+      AyuDrishti
+    </div>
+    <h1>Your yoga teacher,<br><span class="tint">living in the camera.</span></h1>
+    <p class="sub">A plain-language tour of the whole project — what it does, how every piece works, and what every technical word actually means. No prior knowledge needed.</p>
+    <div class="meta-row">
+      <span class="pill">10 poses</span>
+      <span class="pill">82 alignment checks</span>
+      <span class="pill">Watches · Corrects · Adapts</span>
+      <span class="pill">Runs on a phone camera</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Contents">
+    <span class="kicker">What's inside</span>
+    <ol>
+      <li><a href="#idea">The big idea</a></li>
+      <li><a href="#watch">How it watches you</a></li>
+      <li><a href="#judge">Naming vs judging a pose</a></li>
+      <li><a href="#score">How it gives a score</a></li>
+      <li><a href="#coach">Telling you what to fix</a></li>
+      <li><a href="#plan">Choosing your practice</a></li>
+      <li><a href="#assistant">The yoga chatbot</a></li>
+      <li><a href="#band">The optional band</a></li>
+      <li><a href="#built">How it's all built</a></li>
+      <li><a href="#tech">Under the hood: the tech</a></li>
+      <li><a href="#safe">Is my data safe?</a></li>
+      <li><a href="#real">Real vs still-a-prototype</a></li>
+      <li><a href="#glossary">Glossary of every term</a></li>
+    </ol>
+  </nav>
+</div>
+
+<div class="prose wrap">
+  <p class="lead">Imagine starting yoga at home. An app shows you a video of someone doing a perfect pose — and then you're on your own. Is your back straight? Is your knee in a safe position? Are you actually getting better week by week? A video can't tell you, because it never <em>looks</em> at you.</p>
+  <p><strong>AyuDrishti closes that gap.</strong> It uses your phone's camera to watch how you do a pose, tells you out loud exactly what to fix, keeps score, and remembers — so tomorrow's session is shaped by how today actually went. Below, we build up the whole thing one simple step at a time, and explain every new word the moment it appears.</p>
+  <p>Under one simple idea — <em>watch, correct, remember, adapt</em> — the project quietly pulls together a lot: computer vision that runs on your own phone, a hand-built scoring system with <strong>82 checks across 10 poses</strong>, spoken hands-free coaching in English and Hindi, a plan that rewrites itself from your history, a yoga chatbot that only answers from trusted notes, and an optional sensor band. The final part opens the hood on exactly which technologies do this and how each one was wired in and tuned.</p>
+</div>
+
+<!-- 1. THE BIG IDEA -->
+<section id="idea">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 1</span>
+      <h2>The big idea: a loop, not a video</h2>
+    </div>
+    <div class="prose">
+      <p>Most yoga apps are a one-way street: they show, you copy. AyuDrishti is a <strong>loop</strong> — a circle where each step feeds the next, and the whole thing keeps improving. It works like a real teacher's routine:</p>
+    </div>
+
+    <figure class="fig dgm">
+      <svg viewBox="0 0 720 175" role="img" aria-label="Six steps in a row — Suggest, Detect, Assess, Correct, Track, Adapt — with a return arrow from Adapt back to Suggest.">
+        <defs>
+          <marker id="a1" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="fillmuted"/></marker>
+          <marker id="a1a" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="fillaccent"/></marker>
+        </defs>
+        <!-- six steps on one baseline -->
+        <g>
+          <g transform="translate(68,58)"><rect class="box-primary" x="-48" y="-25" width="96" height="50" rx="10"/><text x="0" y="-3" text-anchor="middle" font-weight="700" font-size="14" class="primary">Suggest</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="9">a plan for you</text></g>
+          <g transform="translate(198,58)"><rect class="box" x="-48" y="-25" width="96" height="50" rx="10"/><text x="0" y="-3" text-anchor="middle" font-weight="700" font-size="14">Detect</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="9">see your body</text></g>
+          <g transform="translate(328,58)"><rect class="box" x="-48" y="-25" width="96" height="50" rx="10"/><text x="0" y="-3" text-anchor="middle" font-weight="700" font-size="14">Assess</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="9">grade the pose</text></g>
+          <g transform="translate(458,58)"><rect class="box" x="-48" y="-25" width="96" height="50" rx="10"/><text x="0" y="-3" text-anchor="middle" font-weight="700" font-size="14">Correct</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="9">speak the fix</text></g>
+          <g transform="translate(588,58)"><rect class="box" x="-48" y="-25" width="96" height="50" rx="10"/><text x="0" y="-3" text-anchor="middle" font-weight="700" font-size="14">Track</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="9">save results</text></g>
+        </g>
+        <!-- straight arrows between the first five -->
+        <g>
+          <line class="edge" marker-end="url(#a1)" x1="118" y1="58" x2="148" y2="58"/>
+          <line class="edge" marker-end="url(#a1)" x1="248" y1="58" x2="278" y2="58"/>
+          <line class="edge" marker-end="url(#a1)" x1="378" y1="58" x2="408" y2="58"/>
+          <line class="edge" marker-end="url(#a1)" x1="508" y1="58" x2="538" y2="58"/>
+        </g>
+        <!-- Adapt sits below Track, fed by Track, and loops back to Suggest -->
+        <line class="edge-accent" marker-end="url(#a1a)" x1="588" y1="83" x2="588" y2="108"/>
+        <g transform="translate(588,133)"><rect class="box-accent" x="-52" y="-25" width="104" height="50" rx="11"/><text x="0" y="-3" text-anchor="middle" font-weight="700" font-size="14" class="accent">Adapt</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="9">reshape tomorrow</text></g>
+        <path class="edge-accent" marker-end="url(#a1a)" d="M 536 133 L 68 133 L 68 86"/>
+        <text class="lbl accent" x="300" y="126" text-anchor="middle" font-size="10">what it measured today reshapes tomorrow's plan</text>
+      </svg>
+      <figcaption><b>The closed loop.</b> Every part of the app serves one leg of this circle. The clever bit is the last step — <b>Adapt</b> — where what it measured today changes what it asks of you tomorrow.</figcaption>
+    </figure>
+
+    <div class="callout prose">
+      <span class="c-kick">The one-line version</span>
+      <p>A photo app can say <em>“this is Warrior II.”</em> AyuDrishti says <em>“Warrior II — 84%. Your front knee has drifted past your ankle; draw it back.”</em> That extra sentence is the whole point.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. HOW IT WATCHES -->
+<section id="watch">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 2</span>
+      <h2>How it watches you — without seeing you</h2>
+    </div>
+    <div class="prose">
+      <p>Here's the part that surprises people: <strong>your photo or video never leaves your phone.</strong> Instead, the phone quietly finds 33 key points on your body — head, shoulders, elbows, hips, knees, ankles — and only the <em>positions of those dots</em> (just numbers) are sent onward. The picture stays with you.</p>
+    </div>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Landmark</div>
+      <p>One of the 33 dots the phone places on your body to describe your shape.</p>
+      <span class="analogy">Like a connect-the-dots outline of you — the app keeps the dots and throws the photo away.</span>
+    </div>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">MediaPipe</div>
+      <p>The free Google technology that finds those 33 dots in the camera image, right on your device.</p>
+    </div>
+
+    <figure class="fig dgm">
+      <svg viewBox="0 0 720 210" role="img" aria-label="You to camera to 33 dots on the phone, then only numbers travel to the server, which sends back a score and spoken correction.">
+        <defs>
+          <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="fillmuted"/></marker>
+          <marker id="a2p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="fillprimary"/></marker>
+        </defs>
+        <!-- on-device zone -->
+        <rect x="14" y="26" width="360" height="158" rx="14" fill="none" stroke="var(--line)" stroke-dasharray="5 5"/>
+        <text class="lbl accent" x="30" y="46" font-size="10">ON YOUR PHONE · PRIVATE</text>
+
+        <!-- person -->
+        <g transform="translate(78,110)">
+          <circle cx="0" cy="-34" r="9" class="box"/>
+          <line class="edge" x1="0" y1="-25" x2="0" y2="8"/>
+          <line class="edge" x1="0" y1="-16" x2="-16" y2="2"/>
+          <line class="edge" x1="0" y1="-16" x2="16" y2="2"/>
+          <line class="edge" x1="0" y1="8" x2="-12" y2="34"/>
+          <line class="edge" x1="0" y1="8" x2="12" y2="34"/>
+          <g class="accent"><circle cx="0" cy="-34" r="2.6" class="fillaccent"/><circle cx="0" cy="-16" r="2.6" class="fillaccent"/><circle cx="-16" cy="2" r="2.6" class="fillaccent"/><circle cx="16" cy="2" r="2.6" class="fillaccent"/><circle cx="0" cy="8" r="2.6" class="fillaccent"/><circle cx="-12" cy="34" r="2.6" class="fillaccent"/><circle cx="12" cy="34" r="2.6" class="fillaccent"/></g>
+          <text class="lbl" x="0" y="58" text-anchor="middle" font-size="10">you + 33 dots</text>
+        </g>
+
+        <line class="edge" marker-end="url(#a2)" x1="150" y1="105" x2="214" y2="105"/>
+
+        <!-- camera/phone -->
+        <g transform="translate(290,105)">
+          <rect class="box" x="-40" y="-40" width="80" height="80" rx="10"/>
+          <circle cx="0" cy="-6" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="0" cy="-6" r="5" class="fillmuted"/>
+          <text class="lbl" x="0" y="30" text-anchor="middle" font-size="10">camera + MediaPipe</text>
+        </g>
+
+        <!-- only numbers cross -->
+        <path class="edge-primary" marker-end="url(#a2p)" d="M 340 105 L 452 105"/>
+        <text class="lbl primary" x="396" y="96" text-anchor="middle" font-size="10">only numbers →</text>
+
+        <!-- server -->
+        <g transform="translate(520,80)">
+          <rect class="box-primary" x="-52" y="-30" width="104" height="60" rx="10"/>
+          <text x="0" y="-4" text-anchor="middle" font-weight="700" font-size="13" class="primary">Server</text>
+          <text class="lbl" x="0" y="14" text-anchor="middle" font-size="10">checks the rules</text>
+        </g>
+        <!-- back: score+voice -->
+        <path class="edge" marker-end="url(#a2)" d="M 520 116 L 520 150 L 300 150 L 300 152"/>
+        <text class="lbl" x="410" y="166" text-anchor="middle" font-size="10">← score + spoken correction</text>
+
+        <text class="lbl" x="640" y="80" text-anchor="middle" font-size="10">84%</text>
+        <text class="lbl accent" x="640" y="96" text-anchor="middle" font-size="10">“fix knee”</text>
+      </svg>
+      <figcaption><b>What actually travels.</b> The camera image is processed on your phone; only the 33 dot-positions cross to the server. It replies with a score and a correction — <b>your image never leaves the device.</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 3. NAMING VS JUDGING -->
+<section id="judge">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 3</span>
+      <h2>Naming a pose vs judging it</h2>
+    </div>
+    <div class="prose">
+      <p>This is the heart of the project. There are two very different questions you can ask about a pose, and most apps only answer the first one:</p>
+    </div>
+
+    <div class="compare prose">
+      <div class="col no">
+        <h4>Recognition — “which pose?”</h4>
+        <p>Names the shape. <em>“This is Warrior II.”</em> Useful, but it tells a struggling beginner nothing about <em>how</em> they're doing.</p>
+      </div>
+      <div class="col yes">
+        <h4>Assessment — “how well?”</h4>
+        <p>Grades it and coaches. <em>“Warrior II — 84%. Front knee too far forward; draw it back.”</em> This is what a teacher does.</p>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>AyuDrishti does both, but it keeps them separate on purpose. If it used its strict grading rules to <em>recognise</em> the pose, a wobbly beginner's Warrior II might not be recognised as Warrior II at all — and they'd get no help. So recognition uses <strong>loosened</strong> rules (match the rough shape), while assessment uses the <strong>strict</strong> ones (grade the quality).</p>
+    </div>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Recognition vs Assessment</div>
+      <p>Recognition = <b>what</b> pose is this. Assessment = <b>how good</b> is it and what to fix.</p>
+      <span class="analogy">A friend can name the song. A music teacher tells you which note you missed.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SCORING -->
+<section id="score">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 4</span>
+      <h2>How it turns a pose into a score</h2>
+    </div>
+    <div class="prose">
+      <p>The app doesn't have one big mysterious opinion. Instead, each pose has its own little <strong>checklist</strong>, and every item on it is one thing a good teacher would watch. Add up the checklist and you get the score — and because it's a checklist, the app can always explain <em>why</em>.</p>
+    </div>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Alignment rule</div>
+      <p>One checklist item for one body part — for example, <em>“the front knee should sit directly above the ankle.”</em> Warrior II has 11 such rules; Mountain Pose has 10.</p>
+    </div>
+
+    <div class="prose">
+      <p>Each rule has a <strong>good zone</strong> (the target range). Sit inside it and you get full marks for that item. Drift outside and you lose marks <em>gradually</em> — a knee slightly off looks nothing like a knee badly off. The distance you're allowed to drift before scoring zero is the <strong>tolerance</strong>.</p>
+    </div>
+
+    <figure class="fig dgm">
+      <svg viewBox="0 0 700 180" role="img" aria-label="A number line: full marks inside the good zone, marks fading to zero as the measurement drifts outside by one tolerance.">
+        <defs>
+          <linearGradient id="grad" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="var(--accent)"/>
+            <stop offset="0.5" stop-color="var(--primary)"/>
+            <stop offset="1" stop-color="var(--accent)"/>
+          </linearGradient>
+        </defs>
+        <!-- good zone -->
+        <rect x="290" y="52" width="120" height="46" rx="8" class="box-primary"/>
+        <text x="350" y="72" text-anchor="middle" font-weight="700" font-size="13" class="primary">good zone</text>
+        <text class="lbl" x="350" y="88" text-anchor="middle" font-size="10">score 100%</text>
+        <!-- baseline -->
+        <line class="edge" x1="60" y1="120" x2="640" y2="120"/>
+        <!-- score curve: rises into zone, flat across, falls -->
+        <path d="M 70 120 L 290 60 L 410 60 L 630 120" fill="none" stroke="url(#grad)" stroke-width="3"/>
+        <!-- markers -->
+        <circle cx="350" cy="60" r="4" class="fillprimary"/>
+        <circle cx="200" cy="94" r="4" class="fillaccent"/>
+        <circle cx="70" cy="120" r="4" class="fillaccent"/>
+        <text class="lbl" x="200" y="112" text-anchor="middle" font-size="10">drifting…</text>
+        <text class="lbl accent" x="70" y="112" text-anchor="middle" font-size="10">1 tolerance out = 0%</text>
+        <text class="lbl" x="350" y="150" text-anchor="middle" font-size="11">measured value for this body part  →</text>
+      </svg>
+      <figcaption><b>Scoring is a slope, not a pass/fail stamp.</b> Full marks inside the good zone; marks fade smoothly to zero one “tolerance” beyond it. Safety-critical rules (like a collapsing knee) are weighted heavier, so they're corrected first.</figcaption>
+    </figure>
+
+    <div class="callout prose">
+      <span class="c-kick">It refuses to guess</span>
+      <p>If the camera can't clearly see a body part, the app <em>drops</em> the rules that need it and lowers its stated confidence — instead of inventing a number. A score you can trust beats a score that's always there.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. COACHING -->
+<section id="coach">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 5</span>
+      <h2>Telling you what to fix — out loud</h2>
+    </div>
+    <div class="prose">
+      <p>Your hands are on the mat, not the screen — so AyuDrishti is built to be used <strong>hands-free</strong>. It listens for a few simple words and it talks back:</p>
+      <ul>
+        <li>Say <strong>“ready”</strong> — it starts checking the pose you're holding.</li>
+        <li>It <strong>speaks the fix aloud</strong> — <em>“lower your shoulders, lengthen your spine.”</em></li>
+        <li>Say <strong>“retry”</strong> to try again, or <strong>“next”</strong> to move on.</li>
+      </ul>
+      <p>It also speaks two languages — <strong>English and Hindi</strong> — and everything works with normal buttons too, for when voice isn't available.</p>
+    </div>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Text-to-speech (TTS) &amp; voice commands</div>
+      <p>Text-to-speech = the app reading a correction out loud. Voice commands = the app listening for words like “ready” and “next.” Both use tools already built into the web browser — nothing extra to install.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PLAN -->
+<section id="plan">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 6</span>
+      <h2>Choosing your practice — and changing it over time</h2>
+    </div>
+    <div class="prose">
+      <p>Before you even start, the app builds today's session from <strong>your</strong> goals, experience level, and past scores — and it shows its reasoning for every pose. Nothing is a black box.</p>
+    </div>
+
+    <figure class="fig dgm">
+      <svg viewBox="0 0 640 132" role="img" aria-label="A pose's score is a sum of explained reasons: supports your goal, works your focus area, targets your weak spot, matched to your level.">
+        <text x="20" y="30" font-weight="700" font-size="14">Warrior II — chosen because:</text>
+        <g font-size="12">
+          <text class="fillprimary primary" x="24" y="58" font-family="IBM Plex Mono, monospace">+6.0</text><text x="80" y="58">Supports your strength goal</text>
+          <text class="fillprimary primary" x="24" y="80" font-family="IBM Plex Mono, monospace">+5.6</text><text x="80" y="80">Targets your knee — your weakest area</text>
+          <text class="fillprimary primary" x="24" y="102" font-family="IBM Plex Mono, monospace">+3.0</text><text x="80" y="102">Matched to your level</text>
+        </g>
+        <line class="edge" x1="24" y1="112" x2="430" y2="112"/>
+        <text class="accent fillaccent" x="24" y="128" font-weight="700" font-size="13" font-family="IBM Plex Mono, monospace">= 20.4</text>
+        <text class="lbl" x="120" y="128" font-size="11">total score → its place in today's plan</text>
+      </svg>
+      <figcaption><b>Every recommendation shows its working.</b> A practitioner who understands <em>why</em> a pose was picked is far more likely to actually do it.</figcaption>
+    </figure>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Adaptation</div>
+      <p>After each session the app looks at what you struggled with, and feeds that back into the next plan. A pose you keep finding hard comes back around <em>on purpose</em>.</p>
+      <span class="analogy">This is the loop from Part 1 closing — today's practice is literally shaped by yesterday's measurements.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ASSISTANT -->
+<section id="assistant">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 7</span>
+      <h2>The yoga chatbot that doesn't make things up</h2>
+    </div>
+    <div class="prose">
+      <p>There's a chat assistant you can ask anything about yoga — poses, breathing, meditation, safety. But it's built to be <strong>honest</strong>. Instead of answering from a vague memory, it first looks up the relevant pages from AyuDrishti's own yoga notebook, then answers using <em>only</em> those pages — and shows you which pages it used. This approach has a name: <strong>RAG</strong>.</p>
+    </div>
+
+    <figure class="fig dgm">
+      <svg viewBox="0 0 700 168" role="img" aria-label="Your question first fetches matching notes from the app's own knowledge, which are handed with the question to the AI, which answers with sources.">
+        <defs>
+          <marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="fillmuted"/></marker>
+        </defs>
+        <g transform="translate(70,70)"><rect class="box" x="-52" y="-26" width="104" height="52" rx="10"/><text x="0" y="0" text-anchor="middle" font-weight="700" font-size="13">Your</text><text x="0" y="16" text-anchor="middle" font-size="12">question</text></g>
+        <line class="edge" marker-end="url(#a3)" x1="124" y1="70" x2="182" y2="70"/>
+        <g transform="translate(250,70)"><rect class="box-accent" x="-62" y="-30" width="124" height="60" rx="10"/><text x="0" y="-4" text-anchor="middle" font-weight="700" font-size="13" class="accent">Look up</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="10">matching notes</text></g>
+        <!-- notebook -->
+        <g transform="translate(250,148)"><text class="lbl" x="0" y="0" text-anchor="middle" font-size="10">app's own yoga notebook</text></g>
+        <path class="edge" stroke-dasharray="4 4" d="M 250 100 L 250 134"/>
+        <line class="edge" marker-end="url(#a3)" x1="314" y1="70" x2="372" y2="70"/>
+        <g transform="translate(445,70)"><rect class="box-primary" x="-62" y="-30" width="124" height="60" rx="10"/><text x="0" y="-4" text-anchor="middle" font-weight="700" font-size="13" class="primary">AI writes</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="10">using only those notes</text></g>
+        <line class="edge" marker-end="url(#a3)" x1="509" y1="70" x2="567" y2="70"/>
+        <g transform="translate(636,70)"><rect class="box" x="-46" y="-30" width="92" height="60" rx="10"/><text x="0" y="-4" text-anchor="middle" font-weight="700" font-size="12">Answer</text><text class="lbl" x="0" y="13" text-anchor="middle" font-size="10">+ sources</text></g>
+      </svg>
+      <figcaption><b>An open-book exam for the AI.</b> Because it can only answer from notes it just looked up — and cites them — it doesn't confidently invent facts or fake research links.</figcaption>
+    </figure>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">RAG (Retrieval-Augmented Generation)</div>
+      <p>A way of using AI where it <b>retrieves</b> (looks up) relevant facts first, then <b>generates</b> (writes) an answer grounded in them.</p>
+      <span class="analogy">Open-book, not from-memory — so it's far less likely to make things up.</span>
+    </div>
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">LLM &amp; Groq</div>
+      <p>An <b>LLM</b> (large language model) is the AI that writes replies in normal sentences. <b>Groq</b> is the fast, free-tier service that runs it. AyuDrishti supplies its own notes; the LLM just does the wording.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. BAND -->
+<section id="band">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 8</span>
+      <h2>The optional wrist band</h2>
+    </div>
+    <div class="prose">
+      <p>For people who want more, there's an optional wearable band — a tiny do-it-yourself gadget that reads your heart rate, blood-oxygen, sweat level, and movement. It's <strong>completely optional</strong>; the camera side works fully without it.</p>
+    </div>
+
+    <figure class="fig dgm">
+      <svg viewBox="0 0 700 130" role="img" aria-label="Sensors feed a tiny ESP32 computer, which shows values on a small screen and sends them over Bluetooth to the app, then to the server.">
+        <defs>
+          <marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="fillmuted"/></marker>
+        </defs>
+        <g transform="translate(70,65)"><rect class="box" x="-56" y="-34" width="112" height="68" rx="10"/><text x="0" y="-8" text-anchor="middle" font-size="11">heart · oxygen</text><text x="0" y="8" text-anchor="middle" font-size="11">sweat · motion</text><text class="lbl" x="0" y="26" text-anchor="middle" font-size="10">sensors</text></g>
+        <line class="edge" marker-end="url(#a4)" x1="128" y1="65" x2="184" y2="65"/>
+        <g transform="translate(250,65)"><rect class="box-accent" x="-52" y="-30" width="104" height="60" rx="10"/><text x="0" y="0" text-anchor="middle" font-weight="700" font-size="13" class="accent">ESP32</text><text class="lbl" x="0" y="15" text-anchor="middle" font-size="10">tiny computer</text></g>
+        <line class="edge" marker-end="url(#a4)" x1="304" y1="65" x2="360" y2="65"/>
+        <text class="lbl" x="332" y="56" text-anchor="middle" font-size="10">Bluetooth</text>
+        <g transform="translate(430,65)"><rect class="box" x="-46" y="-30" width="92" height="60" rx="10"/><text x="0" y="0" text-anchor="middle" font-weight="700" font-size="12">App</text><text class="lbl" x="0" y="15" text-anchor="middle" font-size="10">on your phone</text></g>
+        <line class="edge" marker-end="url(#a4)" x1="478" y1="65" x2="534" y2="65"/>
+        <g transform="translate(610,65)"><rect class="box-primary" x="-52" y="-30" width="104" height="60" rx="10"/><text x="0" y="0" text-anchor="middle" font-weight="700" font-size="13" class="primary">Server</text><text class="lbl" x="0" y="15" text-anchor="middle" font-size="10">combines signals</text></g>
+      </svg>
+      <figcaption><b>The band's data path.</b> The app only raises a “take a rest” nudge when <b>both</b> your posture <em>and</em> your body signals look strained at once — never from one alone.</figcaption>
+    </figure>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">ESP32 &amp; Bluetooth (BLE)</div>
+      <p><b>ESP32</b> is a cheap, tiny programmable computer inside the band. <b>Bluetooth (BLE)</b> is the short-range wireless it uses to send readings to your phone.</p>
+    </div>
+    <div class="callout warn prose">
+      <span class="c-kick">Not a medical device</span>
+      <p>The band is a wellness gadget made from hobby sensors. It never diagnoses anything — the strongest thing it ever does is gently suggest you pause and rest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. BUILT -->
+<section id="built">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 9</span>
+      <h2>How it's all put together</h2>
+    </div>
+    <div class="prose">
+      <p>Under the hood there are three main parts, and they split the work like a restaurant: the part you see and tap, the part that thinks, and the part that remembers.</p>
+    </div>
+
+    <figure class="fig dgm">
+      <svg viewBox="0 0 700 200" role="img" aria-label="The app on your phone talks to the server, which reads and writes the database; the optional band feeds into the app.">
+        <defs>
+          <marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="fillmuted"/></marker>
+        </defs>
+        <g transform="translate(110,100)"><rect class="box" x="-78" y="-46" width="156" height="92" rx="12"/><text x="0" y="-14" text-anchor="middle" font-weight="700" font-size="15">Frontend</text><text class="lbl" x="0" y="6" text-anchor="middle" font-size="11">the app you see</text><text class="lbl" x="0" y="24" text-anchor="middle" font-size="10">React Native · runs in the browser</text></g>
+
+        <path class="edge" marker-end="url(#a5)" marker-start="url(#a5)" d="M 190 100 L 300 100"/>
+        <text class="lbl" x="245" y="90" text-anchor="middle" font-size="10">requests</text>
+        <text class="lbl accent" x="245" y="118" text-anchor="middle" font-size="9">via an API</text>
+
+        <g transform="translate(390,100)"><rect class="box-primary" x="-82" y="-46" width="164" height="92" rx="12"/><text x="0" y="-14" text-anchor="middle" font-weight="700" font-size="15" class="primary">Backend</text><text class="lbl" x="0" y="6" text-anchor="middle" font-size="11">the brain that thinks</text><text class="lbl" x="0" y="24" text-anchor="middle" font-size="10">FastAPI · the assessment engine</text></g>
+
+        <path class="edge" marker-end="url(#a5)" marker-start="url(#a5)" d="M 474 100 L 560 100"/>
+        <text class="lbl" x="517" y="90" text-anchor="middle" font-size="10">saves</text>
+
+        <g transform="translate(630,100)"><rect class="box" x="-54" y="-46" width="108" height="92" rx="12"/><text x="0" y="-14" text-anchor="middle" font-weight="700" font-size="14">Database</text><text class="lbl" x="0" y="6" text-anchor="middle" font-size="11">the memory</text><text class="lbl" x="0" y="24" text-anchor="middle" font-size="10">PostgreSQL</text></g>
+
+        <!-- band -->
+        <g transform="translate(110,182)"><text class="lbl accent" x="0" y="0" text-anchor="middle" font-size="10">optional band →</text></g>
+        <path class="edge-accent" stroke-dasharray="4 4" d="M 175 178 C 210 178 110 150 110 148"/>
+      </svg>
+      <figcaption><b>Three parts, one restaurant.</b> The <b>frontend</b> is the dining room, the <b>backend</b> is the kitchen, the <b>database</b> is the pantry, and the <b>API</b> is the waiter carrying orders between them.</figcaption>
+    </figure>
+
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Frontend, Backend, Database, API</div>
+      <p><b>Frontend</b> = what you see and tap. <b>Backend</b> = the server that does the thinking. <b>Database</b> = where your history is stored. <b>API</b> = the agreed way the frontend asks the backend for things.</p>
+    </div>
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Cloud hosting (Vercel &amp; Railway)</div>
+      <p>Instead of a computer under a desk, the app lives on rented internet computers. <b>Vercel</b> hosts the part you see; <b>Railway</b> hosts the brain and the memory.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. TECH -->
+<section id="tech">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 10</span>
+      <h2>Under the hood: the full tech stack</h2>
+    </div>
+    <div class="prose">
+      <p>Everything so far was about <em>what</em> AyuDrishti does. This part is for the curious: <em>which</em> tools do the work, and — more importantly — <strong>how they were wired together and customized</strong>, because that's where most of the real engineering lives. Nothing here is off-the-shelf-and-done; almost every tool was bent to fit the job.</p>
+    </div>
+
+    <div class="stack-wrap">
+      <table class="stack">
+        <thead>
+          <tr><th>Layer</th><th>Technology</th><th>What it does here</th><th>How it's integrated &amp; customized</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="layer">App</td><td class="tool">React Native + Expo</td><td>One codebase that runs as a website, and on Android &amp; iOS</td><td class="cust">The whole camera loop runs in the browser; <code>npm run web</code> needs no phone or simulator</td></tr>
+          <tr><td class="layer">Vision</td><td class="tool">MediaPipe Pose</td><td>Finds the 33 body dots from the camera</td><td class="cust">Runs on-device (WebAssembly on web); its output feeds our own rule engine, not a black-box “name the pose” model</td></tr>
+          <tr><td class="layer">Vision</td><td class="tool">OpenCV</td><td>Reads the webcam &amp; draws the skeleton overlay in the desktop tools</td><td class="cust">Used by the Python live-session scripts; the web app talks to MediaPipe directly, so users install nothing</td></tr>
+          <tr><td class="layer">Geometry</td><td class="tool">NumPy</td><td>Turns dots into real angles &amp; distances</td><td class="cust">Eleven custom measurement types; every distance is in <em>torso-lengths</em> so camera distance can't change your score</td></tr>
+          <tr><td class="layer">NLP · input</td><td class="tool">Custom text parser</td><td>Reads “I'm a beginner, 20 min, knee pain” → detected settings</td><td class="cust">Deterministic keywords + patterns, <em>no</em> AI — private, instant, and always shown for your confirmation before saving</td></tr>
+          <tr><td class="layer">NLP · chat</td><td class="tool">scikit-learn TF-IDF</td><td>Finds the right notes for your yoga question</td><td class="cust">Custom light stemmer (breathe → breath), two-word phrases, sub-linear weighting, and a top-matches fallback</td></tr>
+          <tr><td class="layer">NLP · chat</td><td class="tool">Groq (Llama / GPT-OSS)</td><td>Writes the answer in normal sentences</td><td class="cust">Handed <em>only</em> the retrieved notes; the model is swappable with one setting</td></tr>
+          <tr><td class="layer">Planning</td><td class="tool">Custom scorer + scikit-learn</td><td>Builds &amp; adapts your session</td><td class="cust">A transparent rule-based scorer that shows every reason; an optional ML pose-classifier can stand in for the recognizer</td></tr>
+          <tr><td class="layer">Backend</td><td class="tool">FastAPI + Pydantic</td><td>The server “brain”</td><td class="cust">Async &amp; typed; every request is validated, and the API documents itself at <code>/docs</code></td></tr>
+          <tr><td class="layer">Database</td><td class="tool">PostgreSQL + SQLAlchemy</td><td>Remembers your history</td><td class="cust">Stores only <em>derived numbers</em> (scores, corrections) — never an image or video</td></tr>
+          <tr><td class="layer">Security</td><td class="tool">JWT + bcrypt</td><td>Login &amp; password safety</td><td class="cust">SHA-256 pre-hash then bcrypt; per-IP login throttling; only the real site may call the server (CORS)</td></tr>
+          <tr><td class="layer">Voice</td><td class="tool">Web Speech API</td><td>Listens (“ready / next”) &amp; speaks the fix</td><td class="cust">Built into the browser — English &amp; Hindi, with buttons as a fallback where it isn't available</td></tr>
+          <tr><td class="layer">Charts</td><td class="tool">Recharts / react-native-svg</td><td>Your progress graphs</td><td class="cust">Recharts on the web, a hand-matched SVG twin on native — identical inputs</td></tr>
+          <tr><td class="layer">Wearable</td><td class="tool">ESP32 + BLE sensors</td><td>Optional heart / oxygen / sweat / motion</td><td class="cust">Custom Arduino firmware + OLED, a Web-Bluetooth bridge in the app, and a Python receiver for testing</td></tr>
+          <tr><td class="layer">Hosting</td><td class="tool">Vercel + Railway</td><td>Puts it all online</td><td class="cust">Vercel serves the app; Railway runs the brain + database; everything over HTTPS</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="stack-note">Scroll the table sideways on a narrow screen.</p>
+
+    <div class="prose">
+      <h3>Computer vision — MediaPipe &amp; OpenCV</h3>
+      <p>While you practise, <strong>MediaPipe Pose</strong> (a free Google model) runs right inside your phone's browser and returns the 33 dots many times a second. AyuDrishti deliberately doesn't stop at a “this is Warrior II” label — those dots flow into a <strong>rule engine we wrote by hand</strong>, where <strong>NumPy</strong> turns them into real measurements: the angle at a knee, whether the spine is straight, the gap between a knee and an ankle, using eleven different measurement types.</p>
+      <p>Two customizations matter most. First, every distance is measured in <strong>torso-lengths, not pixels</strong>, so standing closer to the camera can't inflate your score. Second, if a body part isn't clearly visible, the rules that depend on it are <strong>switched off</strong> and the app lowers its confidence rather than inventing a number. On the desktop developer tools, <strong>OpenCV</strong> handles reading the webcam and drawing the skeleton on the video; the phone app uses MediaPipe's web build directly.</p>
+
+      <h3>Two very different kinds of “NLP”</h3>
+      <p>Natural-language understanding shows up twice — and, on purpose, they work in opposite ways:</p>
+      <p><strong>1. Reading your preferences.</strong> On the profile screen you can type something like <em>“I'm a beginner, about 20 minutes, 4 times a week, but my knee hurts.”</em> A small parser reads that with keywords and patterns — <strong>no AI and no internet call</strong> — and pulls out your level, session length, frequency, focus areas, and any injury mention. Making it <em>not</em> an AI model is the point: it's predictable, instant, private, and it always shows you what it found and waits for your “OK” before changing anything.</p>
+      <p><strong>2. Answering your questions.</strong> The chat assistant is the opposite — it <em>does</em> use an AI — but it's kept on a short leash by <strong>RAG</strong> (Part 7). The lookup step uses <strong>TF-IDF</strong> (from scikit-learn) to score which of the app's own notes best match your question. We customized it with a <strong>light stemmer</strong> so “breathe,” “breathing,” and “breath” all count as one word, added two-word phrase matching, and a fallback so a question always gets some relevant notes. Only then does the Groq-hosted AI write the wording — using just those notes, and citing them.</p>
+
+      <h3>Machine learning, used honestly</h3>
+      <p>It would be easy to slap “AI recommendations” on the box — but the part that <em>chooses</em> your session is deliberately <strong>not</strong> a mysterious model. It's a transparent scorer that adds up named reasons (<em>+6 supports your goal, +5.6 targets your weak spot…</em>) and shows every one, because a plan you can see the reasoning behind is a plan you'll actually follow.</p>
+      <p><strong>scikit-learn</strong> powers the honest ML that <em>is</em> here: the TF-IDF lookup above, and an optional pose-classifier that can stand in for the rule-based recognizer when a labelled dataset is available. And the “adapt” step reads your past scores to spot recurring weak areas and feeds them back into that same scorer — which is exactly how the loop from Part 1 closes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11. SAFE -->
+<section id="safe">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 11</span>
+      <h2>Is my data safe?</h2>
+    </div>
+    <div class="prose">
+      <p>Security was designed into the structure, not bolted on. In plain terms:</p>
+      <ul>
+        <li><strong>Your images never leave your phone</strong> — only the 33 dot-numbers do, and only <em>results</em> (scores, corrections) are stored.</li>
+        <li><strong>Your data is walled off.</strong> You can only ever see your own sessions; asking for someone else's gets the exact same “not found” as data that doesn't exist — so it can't be poked at.</li>
+        <li><strong>Passwords are scrambled</strong> (a one-way process called bcrypt) — even the team can't read them.</li>
+        <li><strong>Everything travels encrypted</strong> over HTTPS, the padlock in your browser.</li>
+        <li><strong>Only the real website</strong> is allowed to talk to the server (a rule called CORS), and <strong>repeated login guesses get blocked</strong> — so passwords can't be brute-forced.</li>
+      </ul>
+    </div>
+    <div class="term">
+      <span class="t-kick">In plain words</span>
+      <div class="t-word">Login token (JWT)</div>
+      <p>After you log in, the server gives your app a signed wristband. Every later request shows the wristband, so the server knows it's you — and no one else's wristband opens your data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11. REAL VS PROTOTYPE -->
+<section id="real">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Part 12</span>
+      <h2>What's real, and what's still a prototype</h2>
+    </div>
+    <div class="prose">
+      <p>An honest scorecard — because a project that only lists its strengths isn't trustworthy.</p>
+    </div>
+    <div class="compare prose">
+      <div class="col yes">
+        <h4>Working today</h4>
+        <p>Camera assessment, spoken corrections, voice control, the adaptive plan, progress tracking, the RAG chatbot, and the whole app deployed live on the web.</p>
+      </div>
+      <div class="col no">
+        <h4>Still a prototype</h4>
+        <p>The wrist band is fully built in code but hasn't been tested on a real circuit board yet; live camera inside a phone <em>app</em> (vs. the phone browser) needs one more piece.</p>
+      </div>
+    </div>
+    <div class="callout warn prose">
+      <span class="c-kick">Important</span>
+      <p>AyuDrishti is a practice aid, not a medical device. Its alignment targets are an experienced coach's judgement expressed as numbers — genuinely useful, and not a substitute for a qualified teacher, especially if you have an injury.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARY -->
+<section id="glossary">
+  <div class="wrap">
+    <div class="section-head prose">
+      <span class="kicker">Quick reference</span>
+      <h2>Glossary of every term</h2>
+    </div>
+    <div class="glossary">
+      <dl>
+        <dt>Asana</dt><dd>The Sanskrit word for a yoga pose or posture.</dd>
+        <dt>Landmark</dt><dd>One of the <b>33 dots</b> the phone places on your body to describe your shape.</dd>
+        <dt>MediaPipe</dt><dd>Google's free, on-device technology that finds those dots in the camera image.</dd>
+        <dt>Pose detection</dt><dd>Finding where your body is — turning the camera image into the 33 dots.</dd>
+        <dt>Recognition</dt><dd>Deciding <b>which</b> pose you're doing (naming the shape).</dd>
+        <dt>Assessment</dt><dd>Deciding <b>how well</b> you're doing it, and what to correct (grading + coaching).</dd>
+        <dt>Alignment rule</dt><dd>One checklist item for one body part, e.g. “front knee above the ankle.”</dd>
+        <dt>Target range &amp; tolerance</dt><dd>The “good zone” for a rule, and how far you may drift before it scores zero.</dd>
+        <dt>Joint angle</dt><dd>The angle at a joint (like the bend of a knee) — one thing a rule can measure.</dd>
+        <dt>Confidence</dt><dd>How sure the app is that it can see you clearly; it drops rather than guessing.</dd>
+        <dt>Feedback</dt><dd>The specific correction the app gives you, ranked most-important-first.</dd>
+        <dt>Text-to-speech (TTS)</dt><dd>The app reading a correction out loud.</dd>
+        <dt>Voice commands</dt><dd>The app listening for words like “ready,” “retry,” “next.”</dd>
+        <dt>Recommendation</dt><dd>Today's suggested session, built from your goals and past scores.</dd>
+        <dt>Adaptation</dt><dd>Letting yesterday's measured weaknesses reshape today's plan.</dd>
+        <dt>RAG</dt><dd>Retrieval-Augmented Generation — AI that looks facts up first, then answers using them.</dd>
+        <dt>LLM</dt><dd>Large Language Model — the AI that writes replies in normal sentences.</dd>
+        <dt>Groq</dt><dd>The fast, free-tier online service that runs the LLM.</dd>
+        <dt>ESP32</dt><dd>The cheap tiny computer inside the optional band.</dd>
+        <dt>Bluetooth / BLE</dt><dd>Short-range wireless the band uses to reach your phone.</dd>
+        <dt>Frontend</dt><dd>The part of the app you see and tap (built with React Native).</dd>
+        <dt>Backend</dt><dd>The server that does the thinking (built with FastAPI).</dd>
+        <dt>Database</dt><dd>Where your history is stored (PostgreSQL).</dd>
+        <dt>API</dt><dd>The agreed set of requests the frontend uses to ask the backend for things.</dd>
+        <dt>JWT (login token)</dt><dd>The signed “wristband” that proves a request is really from you.</dd>
+        <dt>bcrypt</dt><dd>The one-way scrambling used so stored passwords can't be read back.</dd>
+        <dt>HTTPS</dt><dd>The encrypted connection shown by the padlock in your browser.</dd>
+        <dt>CORS</dt><dd>The rule that lets only the real website talk to the server.</dd>
+        <dt>Cloud hosting</dt><dd>Running the app on rented internet computers (Vercel and Railway).</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <hr class="divider">
+    <p class="mono">AyuDrishti · AI-powered yoga posture assessment</p>
+    <p>Watches your pose · explains the fix · remembers · adapts.</p>
+    <p class="mono">Tip: use your browser's “Print → Save as PDF” to keep a copy of this guide.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var label = btn.querySelector('.tt-label');
+    function current() {
+      return root.getAttribute('data-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      btn.setAttribute('aria-pressed', theme === 'dark');
+      label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+      try { localStorage.setItem('ayu-theme', theme); } catch (e) {}
+    }
+    try {
+      var saved = localStorage.getItem('ayu-theme');
+      if (saved) { apply(saved); }
+      else { label.textContent = current() === 'dark' ? 'Light' : 'Dark'; }
+    } catch (e) {
+      label.textContent = current() === 'dark' ? 'Light' : 'Dark';
+    }
+    btn.addEventListener('click', function () {
+      apply(current() === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
+
+</body>
+</html>

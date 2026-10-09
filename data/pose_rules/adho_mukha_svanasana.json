@@ -1,0 +1,229 @@
+{
+  "id": "adho_mukha_svanasana",
+  "name": "Adho Mukha Svanasana",
+  "english_name": "Downward-Facing Dog",
+  "difficulty": "intermediate",
+  "symmetry": "bilateral",
+  "hold_seconds": 30,
+  "description": "An inverted V. Hands and feet press into the floor while the hips lift high, the arms and back form one long line, and the legs work toward straight without rounding the spine. Best assessed from a side view.",
+  "preferred_view": "side",
+  "camera_hint": "Place your camera to your side, about 2-3 metres away, so your whole body is in frame from the side.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Adho%20mukha%20svanasana%20zamkovoi.jpg?width=600",
+  "image_credit": "Photo: Sezam777 / Wikimedia Commons, CC BY-SA 4.0",
+  "target_goals": [
+    "flexibility",
+    "strength",
+    "mobility",
+    "general_fitness"
+  ],
+  "focus_areas": [
+    "hamstrings",
+    "shoulders",
+    "spine",
+    "calves"
+  ],
+  "corrects": [
+    "spine_extension",
+    "shoulder_alignment",
+    "hamstring_flexibility"
+  ],
+  "preparatory": [
+    "balasana",
+    "bhujangasana"
+  ],
+  "benefits": [
+    "Lengthens the hamstrings, calves and spine",
+    "Builds shoulder and arm strength",
+    "Calms the nervous system as a mild inversion"
+  ],
+  "contraindications": [
+    "Wrist injury",
+    "Late pregnancy",
+    "Uncontrolled high blood pressure",
+    "Recent eye surgery"
+  ],
+  "cues": [
+    "Press your hands firmly into the floor and lift your hips high",
+    "Reach your hips up and back to make one long line from wrists to hips",
+    "Let your knees bend slightly if your lower back rounds",
+    "Draw your shoulders away from your ears",
+    "Let your head hang freely between your arms"
+  ],
+  "components": {
+    "hips": "Hip position",
+    "spine": "Spine line",
+    "arms": "Arms",
+    "legs": "Legs"
+  },
+  "rules": [
+    {
+      "id": "hip_angle_v_shape",
+      "component": "hips",
+      "body_part": "hips",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip",
+        "left_knee"
+      ],
+      "target": [
+        62,
+        105
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Your hips are folded very deeply. Ease the fold slightly and lengthen your spine.",
+        "high": "Lift your hips higher and press them back to deepen the V shape."
+      }
+    },
+    {
+      "id": "hips_highest_point",
+      "component": "hips",
+      "body_part": "hips",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_hip",
+        "left_shoulder"
+      ],
+      "target": [
+        0.15,
+        1.4
+      ],
+      "tolerance": 0.45,
+      "weight": 2.2,
+      "feedback": {
+        "low": "Lift your hips higher so they become the highest point of the pose.",
+        "high": ""
+      },
+      "discriminative": true
+    },
+    {
+      "id": "spine_line_straight",
+      "component": "spine",
+      "body_part": "spine",
+      "measurement": "straightness",
+      "landmarks": [
+        "left_wrist",
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        0,
+        22
+      ],
+      "tolerance": 32,
+      "weight": 2.2,
+      "feedback": {
+        "low": "",
+        "high": "Your back is rounding. Bend your knees a little and lengthen your spine into one straight line from wrists to hips."
+      }
+    },
+    {
+      "id": "left_arm_straight",
+      "component": "arms",
+      "body_part": "left elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist"
+      ],
+      "target": [
+        160,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.8,
+      "feedback": {
+        "low": "Straighten your arms and press firmly through your palms.",
+        "high": ""
+      }
+    },
+    {
+      "id": "right_arm_straight",
+      "component": "arms",
+      "body_part": "right elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "right_shoulder",
+        "right_elbow",
+        "right_wrist"
+      ],
+      "target": [
+        160,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.8,
+      "feedback": {
+        "low": "Straighten your arms and press firmly through your palms.",
+        "high": ""
+      }
+    },
+    {
+      "id": "left_leg_straight",
+      "component": "legs",
+      "body_part": "left knee",
+      "measurement": "angle",
+      "landmarks": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        150,
+        180
+      ],
+      "tolerance": 38,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Work toward straightening your legs, but only as far as your spine can stay long.",
+        "high": ""
+      }
+    },
+    {
+      "id": "right_leg_straight",
+      "component": "legs",
+      "body_part": "right knee",
+      "measurement": "angle",
+      "landmarks": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "target": [
+        150,
+        180
+      ],
+      "tolerance": 38,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Work toward straightening your legs, but only as far as your spine can stay long.",
+        "high": ""
+      }
+    },
+    {
+      "id": "hands_ahead_of_hips",
+      "component": "arms",
+      "body_part": "stance",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "left_wrist",
+        "left_ankle"
+      ],
+      "target": [
+        0.7,
+        2.6
+      ],
+      "tolerance": 0.7,
+      "weight": 1.2,
+      "feedback": {
+        "low": "Walk your hands further forward to lengthen the pose.",
+        "high": "Your hands and feet are too far apart. Step your feet in slightly."
+      }
+    }
+  ],
+  "sequence_stage": "floor",
+  "intensity": 4
+}

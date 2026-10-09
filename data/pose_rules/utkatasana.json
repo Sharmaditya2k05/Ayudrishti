@@ -1,0 +1,223 @@
+{
+  "id": "utkatasana",
+  "name": "Utkatasana",
+  "english_name": "Chair Pose",
+  "difficulty": "beginner",
+  "symmetry": "bilateral",
+  "hold_seconds": 25,
+  "description": "A standing squat. The knees bend and the hips sit back as if toward a chair, the chest stays lifted, and the arms reach up alongside the ears.",
+  "preferred_view": "side",
+  "camera_hint": "Place your camera to your side, about 2-3 metres away, so your whole body is in frame from the side.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Utkatasana%20Yoga-Asana%20Nina-Mel.jpg?width=600",
+  "image_credit": "Photo: Kennguru / Wikimedia Commons, CC BY 3.0",
+  "target_goals": [
+    "strength",
+    "general_fitness",
+    "beginner_learning"
+  ],
+  "focus_areas": [
+    "thighs",
+    "core",
+    "shoulders",
+    "ankles"
+  ],
+  "corrects": [
+    "knee_alignment",
+    "torso_alignment"
+  ],
+  "preparatory": [
+    "tadasana"
+  ],
+  "benefits": [
+    "Strengthens the thighs, hips and ankles",
+    "Builds core and shoulder endurance",
+    "Prepares the legs for standing balance poses"
+  ],
+  "contraindications": [
+    "Knee injury",
+    "Low blood pressure",
+    "Shoulder injury (keep arms lower)"
+  ],
+  "cues": [
+    "Bend your knees and sit your hips back and down",
+    "Keep your weight in your heels so you can still see your toes",
+    "Lift your chest rather than folding forward",
+    "Reach your arms up alongside your ears",
+    "Keep your knees pointing forward, in line with your feet"
+  ],
+  "components": {
+    "legs": "Legs",
+    "torso": "Torso",
+    "arms": "Arms"
+  },
+  "rules": [
+    {
+      "id": "left_knee_bent",
+      "component": "legs",
+      "body_part": "left knee",
+      "measurement": "angle",
+      "landmarks": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        95,
+        140
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "You are squatting very deeply. Rise slightly to protect your knees.",
+        "high": "Bend your knees more and sit your hips lower."
+      }
+    },
+    {
+      "id": "right_knee_bent",
+      "component": "legs",
+      "body_part": "right knee",
+      "measurement": "angle",
+      "landmarks": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "target": [
+        95,
+        140
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "You are squatting very deeply. Rise slightly to protect your knees.",
+        "high": "Bend your knees more and sit your hips lower."
+      }
+    },
+    {
+      "id": "hips_sitting_back",
+      "component": "torso",
+      "body_part": "hips",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip",
+        "left_knee"
+      ],
+      "target": [
+        75,
+        128
+      ],
+      "tolerance": 35,
+      "weight": 2.2,
+      "feedback": {
+        "low": "You are folding too far forward. Lift your chest and sit your hips back instead.",
+        "high": "Sit your hips further back, as if lowering onto a chair behind you."
+      }
+    },
+    {
+      "id": "knees_track_forward",
+      "component": "legs",
+      "body_part": "knees",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "left_knee",
+        "right_knee"
+      ],
+      "target": [
+        0.0,
+        0.62
+      ],
+      "tolerance": 0.4,
+      "weight": 1.8,
+      "feedback": {
+        "low": "",
+        "high": "Your knees are splaying apart. Draw them back in line with your feet."
+      }
+    },
+    {
+      "id": "chest_lifted",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        0,
+        42
+      ],
+      "tolerance": 32,
+      "weight": 1.8,
+      "feedback": {
+        "low": "",
+        "high": "Lift your chest. Keep your torso more upright rather than collapsing forward."
+      }
+    },
+    {
+      "id": "arms_raised",
+      "component": "arms",
+      "body_part": "arms",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_wrist",
+        "left_shoulder"
+      ],
+      "target": [
+        0.35,
+        1.5
+      ],
+      "tolerance": 0.45,
+      "weight": 2.0,
+      "feedback": {
+        "low": "Reach your arms higher, up alongside your ears.",
+        "high": ""
+      },
+      "discriminative": true
+    },
+    {
+      "id": "left_arm_straight",
+      "component": "arms",
+      "body_part": "left elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist"
+      ],
+      "target": [
+        150,
+        180
+      ],
+      "tolerance": 35,
+      "weight": 1.2,
+      "feedback": {
+        "low": "Straighten your arms as you reach upward.",
+        "high": ""
+      }
+    },
+    {
+      "id": "right_arm_straight",
+      "component": "arms",
+      "body_part": "right elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "right_shoulder",
+        "right_elbow",
+        "right_wrist"
+      ],
+      "target": [
+        150,
+        180
+      ],
+      "tolerance": 35,
+      "weight": 1.2,
+      "feedback": {
+        "low": "Straighten your arms as you reach upward.",
+        "high": ""
+      }
+    }
+  ],
+  "sequence_stage": "standing",
+  "intensity": 4
+}

@@ -1,0 +1,183 @@
+{
+  "id": "setu_bandhasana",
+  "name": "Setu Bandhasana",
+  "english_name": "Bridge Pose",
+  "difficulty": "beginner",
+  "symmetry": "bilateral",
+  "hold_seconds": 30,
+  "description": "A supine backbend. Lying on the back with knees bent and feet planted, the hips lift until the body forms a straight ramp from shoulders through hips to knees. Best assessed from a side view.",
+  "preferred_view": "side",
+  "camera_hint": "Place your camera to your side, about 2-3 metres away, so your whole body is in frame from the side.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Setubandhasana%20oblique%20view.JPG?width=600",
+  "image_credit": "Photo: Biswarup Ganguly / Wikimedia Commons, CC BY 3.0",
+  "target_goals": [
+    "strength",
+    "flexibility",
+    "stress_reduction",
+    "mobility"
+  ],
+  "focus_areas": [
+    "glutes",
+    "spine",
+    "chest",
+    "hamstrings"
+  ],
+  "corrects": [
+    "spine_extension",
+    "hip_alignment",
+    "core_strength"
+  ],
+  "preparatory": [
+    "balasana"
+  ],
+  "benefits": [
+    "Strengthens the glutes, hamstrings and back",
+    "Opens the chest and front of the hips",
+    "A gentle backbend accessible to most beginners"
+  ],
+  "contraindications": [
+    "Neck injury",
+    "Recent shoulder injury",
+    "Late pregnancy"
+  ],
+  "cues": [
+    "Lie on your back with knees bent and feet flat, hip width apart",
+    "Place your feet close enough that your fingertips can graze your heels",
+    "Press through your feet and lift your hips",
+    "Keep your knees pointing forward, not splaying outward",
+    "Keep your neck relaxed and your gaze straight up"
+  ],
+  "components": {
+    "hips": "Hip lift",
+    "legs": "Legs",
+    "spine": "Body line"
+  },
+  "rules": [
+    {
+      "id": "left_knee_bent",
+      "component": "legs",
+      "body_part": "left knee",
+      "measurement": "angle",
+      "landmarks": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        68,
+        115
+      ],
+      "tolerance": 35,
+      "weight": 2.0,
+      "feedback": {
+        "low": "Your heels are tucked in very tightly. Slide your feet slightly further from your hips.",
+        "high": "Walk your feet closer to your hips so your knees bend toward a right angle."
+      }
+    },
+    {
+      "id": "right_knee_bent",
+      "component": "legs",
+      "body_part": "right knee",
+      "measurement": "angle",
+      "landmarks": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "target": [
+        68,
+        115
+      ],
+      "tolerance": 35,
+      "weight": 2.0,
+      "feedback": {
+        "low": "Your heels are tucked in very tightly. Slide your feet slightly further from your hips.",
+        "high": "Walk your feet closer to your hips so your knees bend toward a right angle."
+      }
+    },
+    {
+      "id": "body_line_straight",
+      "component": "spine",
+      "body_part": "spine",
+      "measurement": "straightness",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip",
+        "left_knee"
+      ],
+      "target": [
+        0,
+        28
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "",
+        "high": "Lift your hips higher to make one straight line from your shoulders through your hips to your knees."
+      }
+    },
+    {
+      "id": "hips_lifted",
+      "component": "hips",
+      "body_part": "hips",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_hip",
+        "left_shoulder"
+      ],
+      "target": [
+        0.08,
+        0.95
+      ],
+      "tolerance": 0.35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Press through your feet and lift your hips higher off the floor.",
+        "high": ""
+      },
+      "discriminative": true
+    },
+    {
+      "id": "feet_under_knees",
+      "component": "legs",
+      "body_part": "feet",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        0.0,
+        0.45
+      ],
+      "tolerance": 0.4,
+      "weight": 1.8,
+      "feedback": {
+        "low": "",
+        "high": "Bring your feet back so your ankles sit directly under your knees."
+      }
+    },
+    {
+      "id": "knees_parallel",
+      "component": "legs",
+      "body_part": "knees",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "left_knee",
+        "right_knee"
+      ],
+      "target": [
+        0.0,
+        0.7
+      ],
+      "tolerance": 0.4,
+      "weight": 1.5,
+      "feedback": {
+        "low": "",
+        "high": "Your knees are splaying outward. Draw them back to hip width and keep them parallel."
+      }
+    }
+  ],
+  "sequence_stage": "floor",
+  "intensity": 2
+}

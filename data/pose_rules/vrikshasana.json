@@ -1,0 +1,202 @@
+{
+  "id": "vrikshasana",
+  "name": "Vrikshasana",
+  "english_name": "Tree Pose",
+  "difficulty": "intermediate",
+  "symmetry": "unilateral",
+  "hold_seconds": 25,
+  "description": "A one-legged balance. The standing leg stays straight and steady, the lifted foot rests against the inner calf or thigh with the knee opening to the side, and the torso stays tall over the standing foot.",
+  "preferred_view": "front",
+  "camera_hint": "Place your camera facing you, about 2-3 metres away, so your whole body is in frame.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vriksasana%20Yoga-Asana%20Nina-Mel.jpg?width=600",
+  "image_credit": "Photo: Kennguru / Wikimedia Commons, CC BY 3.0",
+  "target_goals": [
+    "balance",
+    "strength",
+    "relaxation",
+    "general_fitness"
+  ],
+  "focus_areas": [
+    "balance",
+    "hips",
+    "ankles",
+    "core"
+  ],
+  "corrects": [
+    "hip_alignment",
+    "torso_alignment",
+    "balance"
+  ],
+  "preparatory": [
+    "tadasana"
+  ],
+  "benefits": [
+    "Develops balance and focus",
+    "Strengthens the standing ankle, calf and thigh",
+    "Opens the hip of the lifted leg"
+  ],
+  "contraindications": [
+    "Recent ankle or knee injury",
+    "Vertigo or severe balance impairment"
+  ],
+  "cues": [
+    "Ground firmly through your standing foot",
+    "Place your lifted foot on the inner calf or inner thigh, never on the knee",
+    "Open the lifted knee out to the side",
+    "Keep your hips level and your torso tall",
+    "Fix your gaze on a steady point ahead"
+  ],
+  "components": {
+    "standing_leg": "Standing leg",
+    "lifted_leg": "Lifted leg",
+    "torso": "Torso",
+    "hips": "Hip alignment"
+  },
+  "rules": [
+    {
+      "id": "standing_leg_straight",
+      "component": "standing_leg",
+      "body_part": "standing knee",
+      "measurement": "angle",
+      "landmarks": [
+        "rear_hip",
+        "rear_knee",
+        "rear_ankle"
+      ],
+      "target": [
+        165,
+        180
+      ],
+      "tolerance": 25,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Straighten your standing leg and press evenly through the whole foot.",
+        "high": ""
+      }
+    },
+    {
+      "id": "lifted_knee_bent",
+      "component": "lifted_leg",
+      "body_part": "lifted knee",
+      "measurement": "angle",
+      "landmarks": [
+        "lead_hip",
+        "lead_knee",
+        "lead_ankle"
+      ],
+      "target": [
+        25,
+        75
+      ],
+      "tolerance": 35,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Draw your lifted foot higher along the standing leg so the knee folds more."
+      }
+    },
+    {
+      "id": "foot_placement_height",
+      "component": "lifted_leg",
+      "body_part": "lifted foot",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "lead_ankle",
+        "rear_knee"
+      ],
+      "target": [
+        -0.35,
+        0.85
+      ],
+      "tolerance": 0.4,
+      "weight": 2.0,
+      "feedback": {
+        "low": "Lift your foot higher onto the inner calf, keeping it off the knee joint.",
+        "high": "Your foot is very high. Lower it slightly to the inner thigh if the hip feels strained."
+      },
+      "discriminative": true
+    },
+    {
+      "id": "knee_opens_outward",
+      "component": "lifted_leg",
+      "body_part": "lifted knee",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "lead_knee",
+        "rear_knee"
+      ],
+      "target": [
+        0.25,
+        1.2
+      ],
+      "tolerance": 0.35,
+      "weight": 1.8,
+      "feedback": {
+        "low": "Open your lifted knee further out to the side.",
+        "high": ""
+      }
+    },
+    {
+      "id": "torso_upright",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "rear_shoulder",
+        "rear_hip"
+      ],
+      "target": [
+        0,
+        12
+      ],
+      "tolerance": 20,
+      "weight": 2.2,
+      "feedback": {
+        "low": "",
+        "high": "Bring your torso upright. Stack your shoulders over your hips instead of leaning to one side."
+      }
+    },
+    {
+      "id": "hips_level",
+      "component": "hips",
+      "body_part": "hips",
+      "measurement": "segment_horizontal",
+      "landmarks": [
+        "left_hip",
+        "right_hip"
+      ],
+      "target": [
+        0,
+        10
+      ],
+      "tolerance": 18,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Level your hips. Draw the lifted-leg hip down so both hip points stay even."
+      }
+    },
+    {
+      "id": "shoulders_level",
+      "component": "torso",
+      "body_part": "shoulders",
+      "measurement": "segment_horizontal",
+      "landmarks": [
+        "left_shoulder",
+        "right_shoulder"
+      ],
+      "target": [
+        0,
+        10
+      ],
+      "tolerance": 18,
+      "weight": 1.2,
+      "feedback": {
+        "low": "",
+        "high": "Level your shoulders and soften them away from your ears."
+      }
+    }
+  ],
+  "sequence_stage": "balance",
+  "intensity": 3
+}

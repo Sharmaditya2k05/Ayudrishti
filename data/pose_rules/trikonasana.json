@@ -1,0 +1,268 @@
+{
+  "id": "trikonasana",
+  "name": "Trikonasana",
+  "english_name": "Triangle Pose",
+  "difficulty": "intermediate",
+  "symmetry": "unilateral",
+  "hold_seconds": 30,
+  "description": "A wide-stance lateral extension. Both legs stay straight, the torso tilts sideways over the front leg, and the arms extend in one long line -- the lower hand toward the shin, the upper hand toward the ceiling.",
+  "preferred_view": "front",
+  "camera_hint": "Place your camera facing you, about 2-3 metres away, so your whole body is in frame.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trikonasana%20Yoga-Asana%20Nina-Mel.jpg?width=600",
+  "image_credit": "Photo: Kennguru / Wikimedia Commons, CC BY 3.0",
+  "target_goals": [
+    "flexibility",
+    "mobility",
+    "strength",
+    "general_fitness"
+  ],
+  "focus_areas": [
+    "hamstrings",
+    "hips",
+    "spine",
+    "shoulders"
+  ],
+  "corrects": [
+    "torso_alignment",
+    "hip_alignment",
+    "knee_alignment"
+  ],
+  "preparatory": [
+    "tadasana",
+    "virabhadrasana_ii"
+  ],
+  "benefits": [
+    "Stretches the hamstrings, groins and side body",
+    "Improves lateral spinal mobility",
+    "Strengthens the legs and ankles"
+  ],
+  "contraindications": [
+    "Low blood pressure",
+    "Neck injury (keep gaze forward)",
+    "Recent back injury"
+  ],
+  "cues": [
+    "Step your feet wide, front foot pointing forward",
+    "Keep both legs straight throughout",
+    "Reach forward over the front leg, then tilt sideways from the hip",
+    "Extend both arms in one long line, top arm reaching upward",
+    "Open your chest toward the side rather than rolling it toward the floor"
+  ],
+  "components": {
+    "legs": "Legs",
+    "torso": "Torso",
+    "hips": "Hip alignment",
+    "arms": "Arms"
+  },
+  "rules": [
+    {
+      "id": "front_leg_straight",
+      "component": "legs",
+      "body_part": "front knee",
+      "measurement": "angle",
+      "landmarks": [
+        "lead_hip",
+        "lead_knee",
+        "lead_ankle"
+      ],
+      "target": [
+        165,
+        180
+      ],
+      "tolerance": 28,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Straighten your front leg. Lift your kneecap by engaging the thigh, without locking the joint.",
+        "high": ""
+      }
+    },
+    {
+      "id": "back_leg_straight",
+      "component": "legs",
+      "body_part": "back knee",
+      "measurement": "angle",
+      "landmarks": [
+        "rear_hip",
+        "rear_knee",
+        "rear_ankle"
+      ],
+      "target": [
+        165,
+        180
+      ],
+      "tolerance": 28,
+      "weight": 2.0,
+      "feedback": {
+        "low": "Straighten your back leg and press firmly through the back foot.",
+        "high": ""
+      }
+    },
+    {
+      "id": "stance_width",
+      "component": "legs",
+      "body_part": "stance",
+      "measurement": "distance_ratio",
+      "landmarks": [
+        "left_ankle",
+        "right_ankle",
+        "lead_shoulder",
+        "lead_hip"
+      ],
+      "target": [
+        2.2,
+        4.8
+      ],
+      "tolerance": 1.3,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Widen your stance so you can tilt sideways without straining.",
+        "high": "Your stance is too wide. Bring your feet slightly closer for stability."
+      }
+    },
+    {
+      "id": "torso_lateral_tilt",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "lead_shoulder",
+        "lead_hip"
+      ],
+      "target": [
+        35,
+        72
+      ],
+      "tolerance": 30,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Tilt further sideways over your front leg, hinging from the hip rather than the waist.",
+        "high": "You have tilted too far. Lift your torso back up so your side body stays long."
+      },
+      "discriminative": true
+    },
+    {
+      "id": "torso_not_collapsed",
+      "component": "torso",
+      "body_part": "side body",
+      "measurement": "distance",
+      "landmarks": [
+        "lead_shoulder",
+        "lead_hip"
+      ],
+      "target": [
+        0.7,
+        1.35
+      ],
+      "tolerance": 0.4,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Your lower side is collapsing. Lengthen through the bottom of your waist and lift your ribs away from the hip.",
+        "high": ""
+      }
+    },
+    {
+      "id": "arms_in_line",
+      "component": "arms",
+      "body_part": "arms",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "lead_wrist",
+        "rear_wrist"
+      ],
+      "target": [
+        0,
+        28
+      ],
+      "tolerance": 35,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Bring your arms into one straight line, stacking the top wrist over the bottom wrist."
+      }
+    },
+    {
+      "id": "top_arm_raised",
+      "component": "arms",
+      "body_part": "top arm",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "rear_wrist",
+        "rear_shoulder"
+      ],
+      "target": [
+        0.3,
+        1.3
+      ],
+      "tolerance": 0.45,
+      "weight": 1.8,
+      "feedback": {
+        "low": "Reach your top arm higher, extending straight up toward the ceiling.",
+        "high": ""
+      }
+    },
+    {
+      "id": "top_arm_straight",
+      "component": "arms",
+      "body_part": "top elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "rear_shoulder",
+        "rear_elbow",
+        "rear_wrist"
+      ],
+      "target": [
+        158,
+        180
+      ],
+      "tolerance": 32,
+      "weight": 1.2,
+      "feedback": {
+        "low": "Straighten your top arm and reach actively through the fingers.",
+        "high": ""
+      }
+    },
+    {
+      "id": "bottom_arm_straight",
+      "component": "arms",
+      "body_part": "bottom elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "lead_shoulder",
+        "lead_elbow",
+        "lead_wrist"
+      ],
+      "target": [
+        155,
+        180
+      ],
+      "tolerance": 35,
+      "weight": 1.2,
+      "feedback": {
+        "low": "Straighten your bottom arm toward your shin or the floor.",
+        "high": ""
+      }
+    },
+    {
+      "id": "hips_open",
+      "component": "hips",
+      "body_part": "hips",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "left_hip",
+        "right_hip"
+      ],
+      "target": [
+        0.18,
+        1.1
+      ],
+      "tolerance": 0.35,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Open your hips more to the side instead of letting them rotate toward the floor.",
+        "high": ""
+      }
+    }
+  ],
+  "sequence_stage": "standing",
+  "intensity": 3
+}

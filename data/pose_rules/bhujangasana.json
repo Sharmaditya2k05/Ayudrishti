@@ -1,0 +1,247 @@
+{
+  "id": "bhujangasana",
+  "name": "Bhujangasana",
+  "english_name": "Cobra Pose",
+  "difficulty": "beginner",
+  "symmetry": "bilateral",
+  "hold_seconds": 20,
+  "description": "A prone backbend. Lying face down, the chest lifts away from the floor with the hips and legs grounded, elbows staying soft and shoulders drawing back and down. Best assessed from a side view.",
+  "preferred_view": "side",
+  "camera_hint": "Place your camera to your side, about 2-3 metres away, so your whole body is in frame from the side.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bhujangasana%20Yoga-Asana%20Nina-Mel.jpg?width=600",
+  "image_credit": "Photo: Kennguru / Wikimedia Commons, CC BY 3.0",
+  "target_goals": [
+    "flexibility",
+    "strength",
+    "mobility",
+    "beginner_learning"
+  ],
+  "focus_areas": [
+    "spine",
+    "chest",
+    "shoulders",
+    "abdomen"
+  ],
+  "corrects": [
+    "torso_alignment",
+    "shoulder_alignment",
+    "spine_extension"
+  ],
+  "preparatory": [
+    "balasana"
+  ],
+  "benefits": [
+    "Mobilises the thoracic spine into extension",
+    "Opens the chest and the front of the shoulders",
+    "Gently strengthens the muscles along the spine"
+  ],
+  "contraindications": [
+    "Pregnancy",
+    "Recent back or wrist injury",
+    "Carpal tunnel syndrome"
+  ],
+  "cues": [
+    "Lie face down with your hands under your shoulders",
+    "Press the tops of your feet and your hips into the floor",
+    "Lift your chest by lengthening forward and up, not by pushing hard with the arms",
+    "Keep a soft bend in your elbows",
+    "Draw your shoulders down away from your ears"
+  ],
+  "components": {
+    "spine": "Back extension",
+    "chest": "Chest lift",
+    "arms": "Arms",
+    "legs": "Legs",
+    "shoulders": "Shoulders"
+  },
+  "rules": [
+    {
+      "id": "back_extension_left",
+      "component": "spine",
+      "body_part": "spine",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip",
+        "left_knee"
+      ],
+      "target": [
+        135,
+        172
+      ],
+      "tolerance": 32,
+      "weight": 2.5,
+      "feedback": {
+        "low": "You are arching too sharply. Lengthen forward through the crown of your head to spread the curve along the whole spine.",
+        "high": "Lift your chest further to bring your spine into a gentle backbend."
+      }
+    },
+    {
+      "id": "chest_lifted",
+      "component": "chest",
+      "body_part": "chest",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        0.25,
+        1.1
+      ],
+      "tolerance": 0.35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Lift your chest higher away from the floor while keeping your hips grounded.",
+        "high": ""
+      }
+    },
+    {
+      "id": "hips_grounded",
+      "component": "spine",
+      "body_part": "hips",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_hip",
+        "left_knee"
+      ],
+      "target": [
+        -0.3,
+        0.32
+      ],
+      "tolerance": 0.35,
+      "weight": 1.8,
+      "feedback": {
+        "low": "Keep your hips pressing down into the floor.",
+        "high": "Your hips are lifting off the floor. Lower them and lift through the chest instead."
+      }
+    },
+    {
+      "id": "left_elbow_soft",
+      "component": "arms",
+      "body_part": "left elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist"
+      ],
+      "target": [
+        105,
+        172
+      ],
+      "tolerance": 38,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Press a little more through your hands to lift the chest.",
+        "high": "Soften your elbows. Keep a slight bend rather than locking the arms straight."
+      }
+    },
+    {
+      "id": "right_elbow_soft",
+      "component": "arms",
+      "body_part": "right elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "right_shoulder",
+        "right_elbow",
+        "right_wrist"
+      ],
+      "target": [
+        105,
+        172
+      ],
+      "tolerance": 38,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Press a little more through your hands to lift the chest.",
+        "high": "Soften your elbows. Keep a slight bend rather than locking the arms straight."
+      }
+    },
+    {
+      "id": "left_leg_straight",
+      "component": "legs",
+      "body_part": "left knee",
+      "measurement": "angle",
+      "landmarks": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        155,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Straighten your legs and press the tops of your feet into the floor.",
+        "high": ""
+      }
+    },
+    {
+      "id": "right_leg_straight",
+      "component": "legs",
+      "body_part": "right knee",
+      "measurement": "angle",
+      "landmarks": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "target": [
+        155,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Straighten your legs and press the tops of your feet into the floor.",
+        "high": ""
+      }
+    },
+    {
+      "id": "shoulders_away_from_ears",
+      "component": "shoulders",
+      "body_part": "shoulders",
+      "measurement": "distance",
+      "landmarks": [
+        "left_shoulder",
+        "left_ear"
+      ],
+      "target": [
+        0.35,
+        1.2
+      ],
+      "tolerance": 0.3,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Draw your shoulders down away from your ears and broaden across the collarbones.",
+        "high": ""
+      }
+    },
+    {
+      "id": "torso_pitched_forward",
+      "component": "spine",
+      "body_part": "torso",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        28,
+        90
+      ],
+      "tolerance": 25,
+      "weight": 1.5,
+      "discriminative": true,
+      "feedback": {
+        "low": "You are too upright for Cobra. Lie down on your front with your hips on the floor.",
+        "high": ""
+      }
+    }
+  ],
+  "sequence_stage": "floor",
+  "intensity": 2
+}

@@ -1,0 +1,205 @@
+{
+  "id": "paschimottanasana",
+  "name": "Paschimottanasana",
+  "english_name": "Seated Forward Bend",
+  "difficulty": "intermediate",
+  "symmetry": "bilateral",
+  "hold_seconds": 40,
+  "description": "A seated forward fold. Sitting with the legs extended, the torso hinges forward from the hips over straight legs while the spine stays long rather than rounding. Best assessed from a side view.",
+  "preferred_view": "side",
+  "camera_hint": "Place your camera to your side, about 2-3 metres away, so your whole body is in frame from the side.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paschimotanasana%20Yoga-Asana%20Nina-Mel.jpg?width=600",
+  "image_credit": "Photo: Kennguru / Wikimedia Commons, CC BY 3.0",
+  "target_goals": [
+    "flexibility",
+    "relaxation",
+    "stress_reduction",
+    "mobility"
+  ],
+  "focus_areas": [
+    "hamstrings",
+    "lower_back",
+    "spine"
+  ],
+  "corrects": [
+    "hamstring_flexibility",
+    "spine_extension"
+  ],
+  "preparatory": [
+    "balasana",
+    "adho_mukha_svanasana"
+  ],
+  "benefits": [
+    "Lengthens the hamstrings and the whole back line of the body",
+    "Encourages a calm, inward focus",
+    "Relieves tension along the spine"
+  ],
+  "contraindications": [
+    "Herniated disc",
+    "Recent back injury",
+    "Pregnancy"
+  ],
+  "cues": [
+    "Sit tall with your legs extended and feet flexed",
+    "Hinge forward from your hips, not your waist",
+    "Lead with your chest to keep the spine long",
+    "Bend your knees slightly if your back rounds",
+    "Reach your hands toward your shins, ankles or feet"
+  ],
+  "components": {
+    "legs": "Legs",
+    "torso": "Forward fold",
+    "spine": "Spine length",
+    "arms": "Arms"
+  },
+  "rules": [
+    {
+      "id": "left_leg_straight",
+      "component": "legs",
+      "body_part": "left knee",
+      "measurement": "angle",
+      "landmarks": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        158,
+        180
+      ],
+      "tolerance": 32,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Work toward straightening your legs, keeping only a small bend if your hamstrings are tight.",
+        "high": ""
+      }
+    },
+    {
+      "id": "right_leg_straight",
+      "component": "legs",
+      "body_part": "right knee",
+      "measurement": "angle",
+      "landmarks": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "target": [
+        158,
+        180
+      ],
+      "tolerance": 32,
+      "weight": 2.5,
+      "feedback": {
+        "low": "Work toward straightening your legs, keeping only a small bend if your hamstrings are tight.",
+        "high": ""
+      }
+    },
+    {
+      "id": "hip_fold_depth",
+      "component": "torso",
+      "body_part": "hips",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip",
+        "left_knee"
+      ],
+      "target": [
+        18,
+        72
+      ],
+      "tolerance": 38,
+      "weight": 2.5,
+      "feedback": {
+        "low": "",
+        "high": "Fold further forward from your hips, leading with your chest rather than rounding your back."
+      }
+    },
+    {
+      "id": "torso_reaches_forward",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "horizontal_gap",
+      "landmarks": [
+        "left_shoulder",
+        "left_knee"
+      ],
+      "target": [
+        0.0,
+        0.95
+      ],
+      "tolerance": 0.6,
+      "weight": 1.8,
+      "feedback": {
+        "low": "",
+        "high": "Reach your chest further forward over your legs."
+      }
+    },
+    {
+      "id": "spine_stays_long",
+      "component": "spine",
+      "body_part": "spine",
+      "measurement": "distance",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        0.75,
+        1.35
+      ],
+      "tolerance": 0.4,
+      "weight": 2.0,
+      "feedback": {
+        "low": "Your back is rounding and collapsing. Bend your knees a little and lengthen your spine forward instead of curling down.",
+        "high": ""
+      }
+    },
+    {
+      "id": "arms_reaching",
+      "component": "arms",
+      "body_part": "arms",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist"
+      ],
+      "target": [
+        130,
+        180
+      ],
+      "tolerance": 45,
+      "weight": 1.0,
+      "signature": false,
+      "feedback": {
+        "low": "Reach your hands toward your shins, ankles or feet without pulling yourself down forcefully.",
+        "high": ""
+      }
+    },
+    {
+      "id": "seated_shoulders_above_hips",
+      "component": "spine",
+      "body_part": "torso",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        0.0,
+        1.2
+      ],
+      "tolerance": 0.3,
+      "weight": 1.5,
+      "discriminative": true,
+      "feedback": {
+        "low": "Sit upright on the floor with your legs extended in front of you.",
+        "high": ""
+      }
+    }
+  ],
+  "sequence_stage": "cooldown",
+  "intensity": 3
+}

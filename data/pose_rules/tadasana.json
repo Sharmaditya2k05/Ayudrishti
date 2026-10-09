@@ -1,0 +1,260 @@
+{
+  "id": "tadasana",
+  "name": "Tadasana",
+  "english_name": "Mountain Pose",
+  "difficulty": "beginner",
+  "symmetry": "bilateral",
+  "hold_seconds": 30,
+  "description": "The foundational standing posture. Feet grounded, spine tall, shoulders relaxed, arms resting alongside the body. Every other standing asana is built on the alignment learned here.",
+  "preferred_view": "front",
+  "camera_hint": "Place your camera facing you, about 2-3 metres away, so your whole body is in frame.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tadasana%20Yoga-Asana%20Nina-Mel.jpg?width=600",
+  "image_credit": "Photo: Kennguru / Wikimedia Commons, CC BY 3.0",
+  "target_goals": [
+    "beginner_learning",
+    "general_fitness",
+    "relaxation",
+    "mobility"
+  ],
+  "focus_areas": [
+    "posture",
+    "core",
+    "shoulders",
+    "legs"
+  ],
+  "corrects": [
+    "torso_alignment",
+    "shoulder_alignment"
+  ],
+  "preparatory": [],
+  "benefits": [
+    "Builds postural awareness and steadiness",
+    "Teaches even weight distribution through both feet",
+    "Gently strengthens thighs, knees and ankles"
+  ],
+  "contraindications": [
+    "Low blood pressure with dizziness on standing"
+  ],
+  "cues": [
+    "Stand with your feet close together and weight even across both feet",
+    "Lengthen upward through the crown of your head",
+    "Let your shoulders drop away from your ears",
+    "Keep your arms relaxed alongside your body, palms facing forward"
+  ],
+  "components": {
+    "legs": "Legs",
+    "torso": "Torso",
+    "shoulders": "Shoulders",
+    "arms": "Arms"
+  },
+  "rules": [
+    {
+      "id": "left_knee_straight",
+      "component": "legs",
+      "body_part": "left knee",
+      "measurement": "angle",
+      "landmarks": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        168,
+        180
+      ],
+      "tolerance": 25,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Straighten your left leg without locking the knee.",
+        "high": ""
+      }
+    },
+    {
+      "id": "right_knee_straight",
+      "component": "legs",
+      "body_part": "right knee",
+      "measurement": "angle",
+      "landmarks": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "target": [
+        168,
+        180
+      ],
+      "tolerance": 25,
+      "weight": 1.5,
+      "feedback": {
+        "low": "Straighten your right leg without locking the knee.",
+        "high": ""
+      }
+    },
+    {
+      "id": "feet_together",
+      "component": "legs",
+      "body_part": "stance",
+      "measurement": "distance_ratio",
+      "landmarks": [
+        "left_ankle",
+        "right_ankle",
+        "left_hip",
+        "left_ankle"
+      ],
+      "target": [
+        0.0,
+        0.32
+      ],
+      "tolerance": 0.3,
+      "weight": 1.0,
+      "feedback": {
+        "low": "",
+        "high": "Bring your feet closer together, roughly hip width or narrower."
+      }
+    },
+    {
+      "id": "torso_upright_left",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        0,
+        8
+      ],
+      "tolerance": 16,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Bring your torso upright, stacking your shoulders directly over your hips."
+      }
+    },
+    {
+      "id": "torso_upright_right",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "segment_vertical",
+      "landmarks": [
+        "right_shoulder",
+        "right_hip"
+      ],
+      "target": [
+        0,
+        8
+      ],
+      "tolerance": 16,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Bring your torso upright, stacking your shoulders directly over your hips."
+      }
+    },
+    {
+      "id": "hips_level",
+      "component": "torso",
+      "body_part": "hips",
+      "measurement": "segment_horizontal",
+      "landmarks": [
+        "left_hip",
+        "right_hip"
+      ],
+      "target": [
+        0,
+        7
+      ],
+      "tolerance": 14,
+      "weight": 1.5,
+      "feedback": {
+        "low": "",
+        "high": "Level your hips by sharing your weight evenly between both feet."
+      }
+    },
+    {
+      "id": "shoulders_level",
+      "component": "shoulders",
+      "body_part": "shoulders",
+      "measurement": "segment_horizontal",
+      "landmarks": [
+        "left_shoulder",
+        "right_shoulder"
+      ],
+      "target": [
+        0,
+        7
+      ],
+      "tolerance": 14,
+      "weight": 1.5,
+      "feedback": {
+        "low": "",
+        "high": "Level your shoulders. Let the higher shoulder soften downward."
+      }
+    },
+    {
+      "id": "left_elbow_straight",
+      "component": "arms",
+      "body_part": "left elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist"
+      ],
+      "target": [
+        158,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.0,
+      "feedback": {
+        "low": "Let your left arm hang straight alongside your body.",
+        "high": ""
+      }
+    },
+    {
+      "id": "right_elbow_straight",
+      "component": "arms",
+      "body_part": "right elbow",
+      "measurement": "angle",
+      "landmarks": [
+        "right_shoulder",
+        "right_elbow",
+        "right_wrist"
+      ],
+      "target": [
+        158,
+        180
+      ],
+      "tolerance": 30,
+      "weight": 1.0,
+      "feedback": {
+        "low": "Let your right arm hang straight alongside your body.",
+        "high": ""
+      }
+    },
+    {
+      "id": "arms_at_sides",
+      "component": "arms",
+      "body_part": "arms",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_wrist",
+        "left_shoulder"
+      ],
+      "target": [
+        -1.4,
+        -0.35
+      ],
+      "tolerance": 0.4,
+      "weight": 1.0,
+      "feedback": {
+        "low": "",
+        "high": "Lower your arms to rest alongside your body."
+      }
+    }
+  ],
+  "sequence_stage": "warmup",
+  "intensity": 1
+}

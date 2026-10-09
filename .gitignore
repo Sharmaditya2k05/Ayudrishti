@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Environment and secrets
+.env
+*.pem
+
+# Local databases
+data/*.db
+data/*.sqlite3
+
+# Model weights (fetch with scripts/fetch_models.py)
+data/models/*.task
+data/models/*.joblib
+data/models/*.pt
+
+# Datasets (see data/datasets/README.md)
+data/datasets/**
+!data/datasets/README.md
+!data/datasets/.gitkeep
+
+# Node / Expo
+node_modules/
+.expo/
+dist/
+web-build/
+npm-debug.log*
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Claude Code local session state
+.claude/
+
+# Office lock/backup files
+~$*
+*.bak

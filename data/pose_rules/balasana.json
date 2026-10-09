@@ -1,0 +1,182 @@
+{
+  "id": "balasana",
+  "name": "Balasana",
+  "english_name": "Child's Pose",
+  "difficulty": "beginner",
+  "symmetry": "bilateral",
+  "hold_seconds": 45,
+  "description": "A kneeling rest. The hips settle back toward the heels, the torso folds forward over the thighs, and the forehead releases toward the floor. The standard recovery posture between more demanding asanas. Best assessed from a side view.",
+  "preferred_view": "side",
+  "camera_hint": "Place your camera to your side, about 2-3 metres away, so your whole body is in frame from the side.",
+  "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Balasana%20zamkovoi.jpg?width=600",
+  "image_credit": "Photo: Sezam777 / Wikimedia Commons, CC BY-SA 4.0",
+  "target_goals": [
+    "relaxation",
+    "stress_reduction",
+    "flexibility",
+    "beginner_learning"
+  ],
+  "focus_areas": [
+    "hips",
+    "lower_back",
+    "relaxation"
+  ],
+  "corrects": [
+    "recovery",
+    "hip_flexibility"
+  ],
+  "preparatory": [],
+  "benefits": [
+    "Releases the lower back and hips",
+    "Slows the breath and settles the nervous system",
+    "Serves as a safe rest position at any point in a session"
+  ],
+  "contraindications": [
+    "Knee injury",
+    "Pregnancy (take knees wide)",
+    "Recent ankle injury"
+  ],
+  "cues": [
+    "Kneel and bring your hips back toward your heels",
+    "Fold your torso forward over your thighs",
+    "Rest your forehead toward the floor",
+    "Let your arms extend forward or rest alongside your body",
+    "Breathe slowly into the back of your ribs"
+  ],
+  "components": {
+    "legs": "Knee fold",
+    "torso": "Forward fold",
+    "arms": "Arms"
+  },
+  "rules": [
+    {
+      "id": "left_knee_folded",
+      "component": "legs",
+      "body_part": "left knee",
+      "measurement": "angle",
+      "landmarks": [
+        "left_hip",
+        "left_knee",
+        "left_ankle"
+      ],
+      "target": [
+        15,
+        62
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "",
+        "high": "Sit your hips further back toward your heels so the knees fold completely."
+      }
+    },
+    {
+      "id": "right_knee_folded",
+      "component": "legs",
+      "body_part": "right knee",
+      "measurement": "angle",
+      "landmarks": [
+        "right_hip",
+        "right_knee",
+        "right_ankle"
+      ],
+      "target": [
+        15,
+        62
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "",
+        "high": "Sit your hips further back toward your heels so the knees fold completely."
+      }
+    },
+    {
+      "id": "torso_folded",
+      "component": "torso",
+      "body_part": "torso",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip",
+        "left_knee"
+      ],
+      "target": [
+        12,
+        62
+      ],
+      "tolerance": 35,
+      "weight": 2.5,
+      "feedback": {
+        "low": "",
+        "high": "Fold your torso further forward so your chest rests toward your thighs."
+      }
+    },
+    {
+      "id": "torso_lowered",
+      "component": "torso",
+      "body_part": "chest",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "left_shoulder",
+        "left_hip"
+      ],
+      "target": [
+        -0.6,
+        0.4
+      ],
+      "tolerance": 0.4,
+      "weight": 2.0,
+      "feedback": {
+        "low": "",
+        "high": "Let your chest and head release further toward the floor."
+      },
+      "discriminative": true
+    },
+    {
+      "id": "head_released",
+      "component": "torso",
+      "body_part": "head",
+      "measurement": "signed_vertical_gap",
+      "landmarks": [
+        "nose",
+        "left_shoulder"
+      ],
+      "target": [
+        -0.9,
+        0.35
+      ],
+      "tolerance": 0.4,
+      "weight": 1.5,
+      "feedback": {
+        "low": "",
+        "high": "Release your head and let your forehead rest toward the floor."
+      }
+    },
+    {
+      "id": "arms_extended",
+      "component": "arms",
+      "body_part": "arms",
+      "measurement": "angle",
+      "landmarks": [
+        "left_shoulder",
+        "left_elbow",
+        "left_wrist"
+      ],
+      "target": [
+        110,
+        180
+      ],
+      "tolerance": 45,
+      "weight": 0.8,
+      "optional": true,
+      "signature": false,
+      "feedback": {
+        "low": "Extend your arms forward along the floor, or let them rest alongside your body.",
+        "high": ""
+      }
+    }
+  ],
+  "sequence_stage": "cooldown",
+  "intensity": 1
+}
